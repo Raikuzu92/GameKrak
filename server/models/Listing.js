@@ -10,7 +10,7 @@ const listingSchema = new Schema({
     },
     user: {
         type: Schema.Types.ObjectId,
-        ref: 'User', // Assuming you have a User model
+        ref: 'User',
         required: true
     },
     listing_type: {
@@ -19,7 +19,7 @@ const listingSchema = new Schema({
         required: true
     },
     price: {
-        type: Number, // Assuming price is in some currency, use Number
+        type: Number,
         required: false // Only required if listing_type is 'buy' or 'sell'
     },
     condition: {
@@ -38,11 +38,13 @@ const listingSchema = new Schema({
     },
     created_at: {
         type: Date,
-        default: Date.now
+        default: Date.now,
+        get: (timestamp) => dateFormat(timestamp)
     },
     updated_at: {
         type: Date,
-        default: Date.now
+        default: Date.now,
+        get: (timestamp) => dateFormat(timestamp)
     }
 }, {
     timestamps: true // Automatically manage createdAt and updatedAt fields
