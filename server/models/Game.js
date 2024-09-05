@@ -28,27 +28,27 @@ const gameSchema = new Schema({
     },
     critic_score: {
         type: String, 
-        required: true
+        required: false
     },
     total_sales: {
         type: String, 
-        required: true
+        required: false
     },
     na_sales: {
         type: String, 
-        required: true
+        required: false
     },
     jp_sales: {
         type: String, 
-        required: true
+        required: false
     },
     pal_sales: {
         type: String, 
-        required: true
+        required: false
     },
     other_sales: {
         type: String, 
-        required: true
+        required: false
     },
     release_date: {
         type: String, // Consider using Date if you'll perform date operations
@@ -57,7 +57,8 @@ const gameSchema = new Schema({
     last_update: {
         type: String // Consider using Date if you'll perform date operations
     }
-}, {
+},
+{
     timestamps: true // Optional: Adds createdAt and updatedAt fields
 });
 
