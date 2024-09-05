@@ -25,6 +25,12 @@ const userSchema = new Schema({
       ref: 'Listing'
     }
   ],
+  transactions: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'Transaction'
+    }
+  ],
 });
 
 userSchema.pre("save", async function (next) {
