@@ -1,19 +1,19 @@
-const { User, Monster } = require("../models");
+const { User, Game } = require("../models");
 const { signToken, AuthenticationError } = require("../utils/auth");
 
 const resolvers = {
   Query: {
     users: async () => {
-      return User.find().populate("monsters");
+      return User.find().populate("game");
     },
     user: async (parent, { username }) => {
       return User.findOne({ username }).populate("monsters");
     },
-    monsters: async () => {
-      return Monster.find().sort({ name: 1 });
+    game : async () => {
+      return Game.find().sort({ name: 1 });
     },
-    monster: async (parent, { monsterId }) => {
-      return Monster.findOne({ _id: monsterId });
+    game: async (parent, { gameId }) => {
+      return Game.findOne({ _id: gameId });
     },
     me: async (parent, args, context) => {
       if (context.user) {
@@ -46,15 +46,15 @@ const resolvers = {
 
       return { token, user };
     },
-    addMonster: async (parent, { monsterName, type, habitat, weaknesses }) => {
-      const monster = await Monster.create({
-        monsterName,
-        type,
-        habitat,
-        weaknesses,
+    addGame: async (parent, { gameName, genre, publisher, developer }) => {
+      const monster = await Game.create({
+        gameName,
+        genre,
+        publisher,
+        developer,
       });
 
-      return monster;
+      return Game;
     },
     addComment: async (parent, { monsterId, commentText }, context) => {
       if (context.user) {
@@ -73,12 +73,12 @@ const resolvers = {
       }
       throw AuthenticationError;
     },
-    removeMonster: async (parent, { monsterId }, context) => {
-      const monster = await Monster.findOneAndDelete({
-        _id: monsterId,
+    removeGame: async (parent, { gameId }, context) => {
+      const monster = await Game.findOneAndDelete({
+        _id: gameId,
       });
 
-      return monster;
+      return Game;
     },
     removeComment: async (parent, { monsterId, commentId }, context) => {
       if (context.user) {
@@ -104,18 +104,18 @@ const resolvers = {
         { new: true }
       );
     },
-    updateMonster: async (
+    updateGame: async (
       parent,
-      { monsterId, monsterName, type, habitat, weaknesses }
+      { gameId, gameName, genre, developer, publisher }
     ) => {
       const updateFields = {};
-      if (monsterName) updateFields.monsterName = monsterName;
-      if (type) updateFields.type = type;
-      if (habitat) updateFields.habitat = habitat;
-      if (weaknesses) updateFields.weaknesses = weaknesses;
+      if (gameName) updateFields.gameName = gameName;
+      if (genre) updateFields.genre= genre;
+      if (developer) updateFields.developer = developer;
+      if (publisher) updateFields.publisher = publisher;
 
       return Monster.findOneAndUpdate(
-        { _id: monsterId },
+        { _id: gameId },
         { $set: updateFields },
         { new: true }
       );
