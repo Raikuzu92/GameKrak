@@ -47,7 +47,7 @@ const resolvers = {
       return { token, user };
     },
     addGame: async (parent, { gameName, genre, publisher, developer }) => {
-      const monster = await Game.create({
+      const game = await Game.create({
         gameName,
         genre,
         publisher,
@@ -56,10 +56,10 @@ const resolvers = {
 
       return Game;
     },
-    addComment: async (parent, { monsterId, commentText }, context) => {
+    addComment: async (parent, { GameId, commentText }, context) => {
       if (context.user) {
-        return Monster.findOneAndUpdate(
-          { _id: monsterId },
+        return Game.findOneAndUpdate(
+          { _id: GameId },
           {
             $addToSet: {
               comments: { commentText, commentAuthor: context.user.username },
@@ -80,10 +80,10 @@ const resolvers = {
 
       return Game;
     },
-    removeComment: async (parent, { monsterId, commentId }, context) => {
+    removeComment: async (parent, { GameId, commentId }, context) => {
       if (context.user) {
-        return Monster.findOneAndUpdate(
-          { _id: monsterId },
+        return Game.findOneAndUpdate(
+          { _id: GameId },
           {
             $pull: {
               comments: {
@@ -97,9 +97,9 @@ const resolvers = {
       }
       throw AuthenticationError;
     },
-    updateComment: async (parent, { monsterId, commentId, commentText }) => {
-      return Monster.findOneAndUpdate(
-        { _id: monsterId, "comments._id": commentId },
+    updateComment: async (parent, { gameId, commentId, commentText }) => {
+      return Game.findOneAndUpdate(
+        { _id: gameId, "comments._id": commentId },
         { $set: { "comments.$.commentText": commentText } },
         { new: true }
       );
