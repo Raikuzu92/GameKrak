@@ -19,16 +19,26 @@ const userSchema = new Schema({
     required: true,
     minlength: 5,
   },
+  bio: {
+    type: String,
+    required: false,
+    maxlength: 1000,
+  },
+  favorite_game: {
+    type: String,
+    required: false,
+    trim: true,
+  },
   listings: [
     {
       type: Schema.Types.ObjectId,
-      ref: 'Listing'
+      ref: 'Listing',
     }
   ],
   transactions: [
     {
       type: Schema.Types.ObjectId,
-      ref: 'Transaction'
+      ref: 'Transaction',
     }
   ],
 });
@@ -38,7 +48,6 @@ userSchema.pre("save", async function (next) {
     const saltRounds = 10;
     this.password = await bcrypt.hash(this.password, saltRounds);
   }
-
   next();
 });
 
