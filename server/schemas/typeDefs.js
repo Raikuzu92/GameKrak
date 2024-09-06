@@ -1,27 +1,51 @@
 const typeDefs = `
-  type User {
-    _id: ID
-    username: String
-    email: String
-    password: String
-  }
 
-  type Monster {
-    _id: ID
-    monsterName: String!
-    type: String!
-    habitat: String!
-    weaknesses: [String]!
-    comments: [Comment]
-  }
+type Game {
+    img: String
+    title: String
+    console: String
+    genre: String
+    publisher: String
+    developer: String
+    critic_score: Float
+    total_sales: Float
+    na_sales: Float
+    jp_sales: Float
+    pal_sales: Float
+    other_sales: Float
+    release_date: String
+    last_update: String
+}
 
-  type Comment {
-    _id: ID
-    commentText: String
-    commentAuthor: String
-    createdAt: String
-  }
+type Listing {
+    id: ID!
+    game: Game
+    user: User
+    listing_type: String
+    price: Float
+    condition: String
+    description: String
+    trade_for: Game
+    created_at: String
+    updated_at: String
+}
 
+type Transaction {
+    id: ID!
+    listing: Listing
+    buyer: User
+    seller: User
+    trader: User
+    trade_with: Game
+    transaction_type: String
+    transaction_date: String
+    amount: Float
+    status: String
+    notes: String
+    created_at: String
+    updated_at: String
+}
+    
   type Auth {
     token: ID!
     user: User
@@ -30,20 +54,18 @@ const typeDefs = `
   type Query {
     users: [User]
     user(username: String!): User
-    monsters(username: String): [Monster]
-    monster(monsterId: ID!): Monster
+    transactions(username: String): [Transaction]
+    game(gameId: ID!): Game
     me: User
   }
 
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-    addMonster(monsterName: String!, type: String!, habitat: String!, weaknesses: [String]!): Monster
-    updateMonster(monsterId: ID!, monsterName: String, type: String, habitat: String, weaknesses: [String]): Monster
-      removeMonster(monsterId: ID!): Monster
-    addComment(monsterId: ID!, commentText: String!): Monster
-    updateComment(monsterId: ID!, commentId: ID!, commentText: String!): Monster
-    removeComment(monsterId: ID!, commentId: ID!): Monster
+    addTransaction(id: ID!, listing: Listing, buyer: User, seller: User, trader: User, trade_with: Game, transaction_type: String, transaction_date: String
+    amount: Float, status: String, notes: String, created_at: String, updated_at: String): Transaction
+    updateGame(img: String, title: String, console: String, genre: String, publisher: String, developer: String, critic_score: Float, total_sales: Float, na_sales: Float, jp_sales: Float, pal_sales: Float, other_sales: Float, release_date: String, last_update: String): Monster,   removeMonster(monsterId: ID!): Game
+    
   }
 `;
 
