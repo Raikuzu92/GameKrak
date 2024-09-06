@@ -35,7 +35,8 @@ const transactionSchema = new Schema({
     },
     transaction_date: {
         type: Date,
-        default: Date.now
+        default: Date.now,
+        get: (timestamp) => dateFormat(timestamp)
     },
     amount: {
         type: Number, // Amount for buying/selling transactions
