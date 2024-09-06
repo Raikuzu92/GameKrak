@@ -1,36 +1,67 @@
-const { User, Game } = require("../models");
+const { User, Listing, Game, Transaction } = require("../models");
 const { signToken, AuthenticationError } = require("../utils/auth");
 
 const resolvers = {
   Query: {
+    // get all users
     users: async () => {
-      return User.find().populate("game");
+      return User.find().populate("listings").populate("transactions");
     },
+    // get one user by username
     user: async (parent, { username }) => {
-      return User.findOne({ username }).populate("monsters");
+      return User.findOne({ username: username }).populate("listings").populate("transactions");
     },
-    game : async () => {
-      return Game.find().sort({ name: 1 });
-    },
-    game: async (parent, { gameId }) => {
-      return Game.findOne({ _id: gameId });
-    },
+    // get logged in user
     me: async (parent, args, context) => {
       if (context.user) {
-        return User.findOne({ _id: context.user._id }).populate("comments");
+        return User.findOne({ _id: context.user._id }).populate("listings").populate("transactions");
       }
       throw AuthenticationError;
+    },
+    // get all listings
+    listings: async () => {
+      return Listing.find().populate("game").populate("user");
+    },
+    // get all listings for one user
+    listingsByUser: async (parent, { username }) => {
+      const user = await User.findOne({ username });
+      if (!user) {
+        throw new Error('User not found');
+      }
+      return Listing.find({ user: user._id }).populate("game").populate("user");
+    },
+    // get all transactions
+    transactions: async () => {
+      return Transaction.find().populate("listing").populate("buyer").populate("seller").populate("trader").populate("trade_with");
+    },
+    // get all transactions for one user (anywhere they are buyer, seller, or trader)
+    transactionsByUser: async (parent, { username }) => {
+      const user = await User.findOne({ username });
+      if (!user) {
+        throw new Error('User not found');
+      }
+      return Transaction.find({
+        $or: [
+          { buyer: user._id },
+          { seller: user._id },
+          { trader: user._id },
+        ],
+      }).populate("listing").populate("buyer").populate("seller").populate("trader").populate("trade_with");
+    },
+    // get all games and sort by title
+    games: async () => {
+      return Game.find().sort({ title: 1 });
+    },
+    // get one game by title
+    gameByTitle: async (parent, { title }) => {
+      return Game.find({ title: title});
     },
   },
 
   Mutation: {
-    addUser: async (parent, { username, email, password }) => {
-      const user = await User.create({ username, email, password });
-      const token = signToken(user);
-      return { token, user };
-    },
-    login: async (parent, { email, password }) => {
-      const user = await User.findOne({ email });
+    // checks user password, signs and returns JWT if correct
+    login: async (parent, { username, password }) => {
+      const user = await User.findOne({ username });
 
       if (!user) {
         throw AuthenticationError;
@@ -46,79 +77,118 @@ const resolvers = {
 
       return { token, user };
     },
-    addGame: async (parent, { gameName, genre, publisher, developer }) => {
+    // creates a new user
+    addUser: async (parent, { username, email, password, bio, favorite_game }) => {
+      const user = await User.create({ username, email, password, bio, favorite_game });
+      const token = signToken(user);
+      return { token, user };
+    },
+    // edits logged in user 
+    editUser: async (parent, args, context) => {
+      if (context.user) {
+        return User.findByIdAndUpdate({ _id: context.user._id }, args, { new: true });
+      }
+      throw AuthenticationError;
+    },
+    // removes a user and deletes all their listings
+    removeUser: async (parent, { id }) => {
+      const user = await User.findByIdAndDelete(id);
+      if (user) {
+        await Listing.deleteMany({ user: id });
+      }
+      return user;
+    },
+    // create new listing and add to user
+    addListing: async (parent, { gameId, listing_type, price, condition, description, trade_for }, context) => {
+      if (context.user) {
+        const listing = await Listing.create({
+          game: gameId,
+          user: context.user._id,
+          listing_type,
+          price,
+          condition,
+          description,
+          trade_for,
+        });
+        await User.findByIdAndUpdate(
+          { _id: context.user._id }, 
+          { $addToSet: { listings: listing._id } }
+        );
+        return listing.populate("game").populate("user");
+      }
+      throw AuthenticationError;
+    },
+    // edit listing for logged in user
+    editListing: async (parent, { id, ...args }, context) => {
+      if (context.user) {
+        return Listing.findOneAndUpdate(
+          { _id: id, user: context.user._id }, 
+          args, 
+          { new: true }
+        ).populate("game").populate("user");
+      }
+      throw AuthenticationError;
+    },
+    // removes a listing from a user
+    removeListing: async (parent, { id }, context) => {
+      if (context.user) {
+        const listing = await Listing.findOneAndDelete({ _id: id, user: context.user._id });
+        if (listing) {
+          await User.findByIdAndUpdate({ _id: context.user._id }, { $pull: { listings: id } });
+        }
+        return listing;
+      }
+      throw AuthenticationError;
+    },
+    // adds a transaction to a user
+    addTransaction: async (parent, { listingId, buyerId, sellerId, traderId, trade_with, transaction_type, amount, status, notes }, context) => {
+      if (context.user) {
+        const transaction = await Transaction.create({
+          listing: listingId,
+          buyer: buyerId,
+          seller: sellerId,
+          trader: traderId,
+          trade_with,
+          transaction_type,
+          amount,
+          status,
+          notes,
+        });
+        await User.findByIdAndUpdate({ _id: buyerId }, { $push: { transactions: transaction._id } });
+        await User.findByIdAndUpdate({ _id: sellerId }, { $push: { transactions: transaction._id } });
+        if (traderId) {
+          await User.findByIdAndUpdate({ _id: traderId }, { $push: { transactions: transaction._id } });
+        }
+        return transaction.populate("listing").populate("buyer").populate("seller").populate("trader").populate("trade_with");
+      }
+      throw AuthenticationError;
+    },
+    // removes a transaction from a user
+    removeTransaction: async (parent, { id }, context) => {
+      if (context.user) {
+        const transaction = await Transaction.findByIdAndDelete(id);
+        if (transaction) {
+          await User.findByIdAndUpdate({ _id: transaction.buyer }, { $pull: { transactions: id } });
+          await User.findByIdAndUpdate({ _id: transaction.seller }, { $pull: { transactions: id } });
+          if (transaction.trader) {
+            await User.findByIdAndUpdate({ _id: transaction.trader }, { $pull: { transactions: id } });
+          }
+        }
+        return transaction;
+      }
+      throw AuthenticationError;
+    },
+    // add a new game
+    addGame: async (parent, { title, genre, publisher, developer, release_date }) => {
       const game = await Game.create({
-        gameName,
+        title,
         genre,
         publisher,
         developer,
+        release_date,
       });
 
-      return Game;
-    },
-    addComment: async (parent, { GameId, commentText }, context) => {
-      if (context.user) {
-        return Game.findOneAndUpdate(
-          { _id: GameId },
-          {
-            $addToSet: {
-              comments: { commentText, commentAuthor: context.user.username },
-            },
-          },
-          {
-            new: true,
-            runValidators: true,
-          }
-        );
-      }
-      throw AuthenticationError;
-    },
-    removeGame: async (parent, { gameId }, context) => {
-      const monster = await Game.findOneAndDelete({
-        _id: gameId,
-      });
-
-      return Game;
-    },
-    removeComment: async (parent, { GameId, commentId }, context) => {
-      if (context.user) {
-        return Game.findOneAndUpdate(
-          { _id: GameId },
-          {
-            $pull: {
-              comments: {
-                _id: commentId,
-                commentAuthor: context.user.username,
-              },
-            },
-          },
-          { new: true }
-        );
-      }
-      throw AuthenticationError;
-    },
-    updateComment: async (parent, { gameId, commentId, commentText }) => {
-      return Game.findOneAndUpdate(
-        { _id: gameId, "comments._id": commentId },
-        { $set: { "comments.$.commentText": commentText } },
-        { new: true }
-      );
-    },
-    updateGame: async (
-      parent,
-      { gameId, gameName, genre, developer, publisher }
-    ) => {
-      const updateFields = {};
-      if (gameName) updateFields.gameName = gameName;
-      if (genre) updateFields.genre= genre;
-      if (developer) updateFields.developer = developer;
-      if (publisher) updateFields.publisher = publisher;
-
-      return Monster.findOneAndUpdate(
-        { _id: gameId },
-        { $set: updateFields },
-        { new: true }
-      );
+      return game;
     },
   },
 };
