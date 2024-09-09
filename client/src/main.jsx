@@ -1,5 +1,9 @@
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import React from "react";
+import {ApolloProvider} from "@apollo/client";
+import { BrowserRouter } from "react-router-dom";
+
 
 // css-in-js component framework
 import { ChakraProvider } from '@chakra-ui/react'
@@ -11,6 +15,11 @@ import Login from "./pages/Login";
 import SingleMonster from "./pages/SingleMonster";
 import Profile from "./pages/Profile";
 import ErrorPage from "./pages/ErrorPage";
+import SplashPage from "./pages/SplashPage.jsx";
+
+
+
+import client from "./apolloClient";
 
 const router = createBrowserRouter([
   {
@@ -20,7 +29,7 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Home />,
+        element: <SplashPage />,
       },
       {
         path: "/login",

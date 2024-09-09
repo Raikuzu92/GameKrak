@@ -32,7 +32,6 @@ const startApolloServer = async () => {
       const paymentIntent = await stripe.paymentIntents.create({
         amount,
         currency: 'usd', // Replace with your currency
-        // Add other parameters as needed
       });
 
       res.send({
