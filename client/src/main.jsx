@@ -1,9 +1,7 @@
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import React from "react";
-import {ApolloProvider} from "@apollo/client";
-import { BrowserRouter } from "react-router-dom";
-
+import { ApolloProvider } from "@apollo/client"; // Import ApolloProvider
 
 import App from "./App.jsx";
 import Home from "./pages/Home";
@@ -14,10 +12,9 @@ import Profile from "./pages/Profile";
 import ErrorPage from "./pages/ErrorPage";
 import SplashPage from "./pages/SplashPage.jsx";
 
+import client from "./apolloClient"; 
 
-
-import client from "./apolloClient";
-
+// Define your routes
 const router = createBrowserRouter([
   {
     path: "/",
@@ -53,5 +50,7 @@ const router = createBrowserRouter([
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <RouterProvider router={router} />
+  <ApolloProvider client={client}> {/* ApolloProvider for GraphQL */}
+    <RouterProvider router={router} /> {/* RouterProvider for routing */}
+  </ApolloProvider>
 );
