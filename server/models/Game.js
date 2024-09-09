@@ -16,15 +16,15 @@ const gameSchema = new Schema({
     },
     genre: {
         type: String,
-        required: true
+        required: false
     },
     publisher: {
         type: String,
-        required: true
+        required: false
     },
     developer: {
         type: String,
-        required: true
+        required: false
     },
     critic_score: {
         type: String, 
@@ -52,7 +52,7 @@ const gameSchema = new Schema({
     },
     release_date: {
         type: String, // Consider using Date if you'll perform date operations
-        required: true
+        required: false
     },
     last_update: {
         type: String // Consider using Date if you'll perform date operations

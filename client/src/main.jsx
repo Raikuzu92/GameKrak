@@ -1,6 +1,9 @@
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
+// css-in-js component framework
+import { ChakraProvider } from '@chakra-ui/react'
+
 import App from "./App.jsx";
 import Home from "./pages/Home";
 import Signup from "./pages/Signup";
@@ -44,5 +47,7 @@ const router = createBrowserRouter([
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <RouterProvider router={router} />
+  <ChakraProvider>
+    <RouterProvider router={router} />
+  </ChakraProvider>
 );
