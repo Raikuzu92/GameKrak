@@ -1,42 +1,33 @@
 import { Link } from "react-router-dom";
-
-import Auth from "../../utils/auth";
+import './Header.css'; // Custom styling for the header
 
 const Header = () => {
   const logout = (event) => {
     event.preventDefault();
-    Auth.logout();
+    console.log("Logged out");
+    // Add Auth.logout() logic later
   };
+
   return (
-    <header className='bg-primary text-light mb-4 py-3 flex-row align-center'>
-      <div className='container flex-row justify-space-between-lg justify-center align-center'>
-        <div>
-          <Link className='text-light' to='/'>
-            <h1 className='m-0'>The Witcher</h1>
+    <header className="retro-header">
+      <div className="container d-flex justify-content-between align-items-center py-3">
+        {/* App Name on the left */}
+        <Link className="glitch-text" to="/">
+          GameKrak
+        </Link>
+
+        {/* Navigation Links on the right */}
+        <nav className="nav-links d-flex align-items-center">
+          <Link className="nav-item text-white" to="/marketplace">
+            Marketplace
           </Link>
-          <p className='m-0'>Let's talk monsters.</p>
-        </div>
-        <div>
-          {Auth.loggedIn() ? (
-            <>
-              <Link className='btn btn-lg btn-info m-2' to='/me'>
-                {Auth.getProfile().data.username}'s profile
-              </Link>
-              <button className='btn btn-lg btn-light m-2' onClick={logout}>
-                Logout
-              </button>
-            </>
-          ) : (
-            <>
-              <Link className='btn btn-lg btn-info m-2' to='/login'>
-                Login
-              </Link>
-              <Link className='btn btn-lg btn-light m-2' to='/signup'>
-                Signup
-              </Link>
-            </>
-          )}
-        </div>
+          <Link className="nav-item text-white" to="/profile">
+            Profile
+          </Link>
+          <span className="nav-item text-white logout" onClick={logout}>
+            Logout
+          </span>
+        </nav>
       </div>
     </header>
   );
