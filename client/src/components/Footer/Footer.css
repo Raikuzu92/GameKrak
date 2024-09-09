@@ -1,0 +1,82 @@
+/* Importing the retro "Press Start 2P" font */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* Retro header style */
+.retro-header {
+  background-color: #1a1a1a;
+  font-family: 'Press Start 2P', cursive;
+  border-bottom: 4px solid #000;
+}
+
+.glitch-text {
+  font-size: 2rem;
+  color: #fff;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  animation: glitch 2s infinite;
+}
+
+/* Make sure the navigation is aligned to the right and inline with the app name */
+.nav-links {
+  display: flex;
+  gap: 20px; /* Space between nav items */
+}
+
+.text-white {
+  font-size: 1rem;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* Glitch animation */
+@keyframes glitch {
+  0% {
+    text-shadow: 2px 2px 0px #ff0000, -2px -2px 0px #00ff00;
+  }
+  20% {
+    text-shadow: -2px -2px 0px #ff00ff, 2px 2px 0px #00ffff;
+  }
+  40% {
+    text-shadow: 2px -2px 0px #ff0000, -2px 2px 0px #00ff00;
+  }
+  60% {
+    text-shadow: -2px 2px 0px #ff00ff, 2px -2px 0px #00ffff;
+  }
+  80% {
+    text-shadow: 2px 2px 0px #ff0000, -2px -2px 0px #00ff00;
+  }
+  100% {
+    text-shadow: -2px -2px 0px #ff00ff, 2px 2px 0px #00ffff;
+  }
+}
+
+.logout {
+  cursor: pointer;
+}
+
+/* Retro footer style */
+.retro-footer {
+  background-color: #1a1a1a;
+  font-family: 'Press Start 2P', cursive;
+  border-top: 4px solid #000;
+  padding: 10px 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-white {
+  color: #ffffff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .glitch-text {
+    font-size: 1.5rem;
+  }
+
+  .text-white {
+    font-size: 0.9rem;
+  }
+}
