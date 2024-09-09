@@ -1,10 +1,9 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/mutations';
-
 import Auth from '../utils/auth';
+import './Signup.css'; // Import custom styles
 
 const Signup = () => {
   const [formState, setFormState] = useState({
@@ -39,15 +38,15 @@ const Signup = () => {
   };
 
   return (
-    <main className="flex-row justify-center mb-4">
-      <div className="col-12 col-lg-10">
-        <div className="card">
-          <h4 className="card-header bg-dark text-light p-2">Sign Up</h4>
+    <main className="signup-container flex-row justify-center align-items-center" style={{ padding: '20px' }}>
+      <div className="col-12 col-md-8">
+        <div className="card signup-card mt-20 mb-20 bg-black">
+          <h4 className="card-header bg-black glitch-text">Sign Up</h4>
           <div className="card-body">
             {data ? (
-              <p>
+              <p className="success-message">
                 Success! You may now head{' '}
-                <Link to="/">back to the homepage.</Link>
+                <Link className="glitch-text" to="/">back to the homepage.</Link>
               </p>
             ) : (
               <form onSubmit={handleFormSubmit}>
@@ -56,8 +55,9 @@ const Signup = () => {
                   placeholder="Your username"
                   name="username"
                   type="text"
-                  value={formState.name}
+                  value={formState.username}
                   onChange={handleChange}
+                  required
                 />
                 <input
                   className="form-input"
@@ -66,27 +66,28 @@ const Signup = () => {
                   type="email"
                   value={formState.email}
                   onChange={handleChange}
+                  required
                 />
                 <input
                   className="form-input"
-                  placeholder="******"
+                  placeholder="Your password"
                   name="password"
                   type="password"
                   value={formState.password}
                   onChange={handleChange}
+                  required
                 />
                 <button
-                  className="btn btn-block btn-primary"
-                  style={{ cursor: 'pointer' }}
+                  className="btn btn-block btn-submit "
                   type="submit"
                 >
-                  Submit
+                  Sign Up
                 </button>
               </form>
             )}
 
             {error && (
-              <div className="my-3 p-3 bg-danger text-white">
+              <div className="error-message">
                 {error.message}
               </div>
             )}
