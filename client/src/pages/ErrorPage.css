@@ -1,0 +1,79 @@
+/* ErrorPage.css */
+
+/* Container for the error page */
+.error-page-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #1b1b1b, #333); /* Dark gradient background */
+    color: #fff; /* White text for contrast */
+    text-align: center;
+    font-family: 'Press Start 2P', cursive; /* Retro pixel font */
+  }
+  
+/* Content area styling */
+.error-content {
+    max-width: 600px;
+    padding: 20px;
+    border-radius: 10px; /* Rounded corners */
+    border: 2px solid red; /* Red border */
+    background-color: #222; /* Dark background for the content */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6); /* Glowing shadow */
+    animation: border-animation 2s infinite alternate;
+}
+
+/* Border animation */
+@keyframes border-animation {
+    0% {
+        border-color: black;
+    }
+    100% {
+        border-color: red;
+    }
+}
+
+/* Apply border animation to .error-content */
+.error-content {
+    animation: border-animation 2s infinite alternate;
+}
+  
+  /* Title styling */
+  .error-title {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+        color: red; /* Bright color for the title */
+        text-shadow: 0 0 10px red, 0 0 20px red; /* Glowing effect */
+        font-size: 5rem; /* Big font size */
+    ;
+  }
+  
+  /* Description styling */
+  .error-description {
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+    color: #e0e0e0; /* Light gray color for description */
+  }
+  
+  /* Error message styling */
+  .error-message {
+    font-size: 1.125rem;
+    font-style: italic;
+    color: #ccc; /* Slightly lighter color for the error message */
+    margin-bottom: 20px;
+  }
+  
+  /* Home link styling */
+  .error-home-link {
+    font-size: 1.125rem;
+    color: black; /* Bright cyan color for the link */
+    text-decoration: none;
+    font-weight: bold;
+    text-shadow: 0 0 5px white; /* Glowing effect on the link */
+  }
+  
+  .error-home-link:hover {
+    text-decoration: underline; /* Underline on hover */
+    color: white;
+  }
+  
