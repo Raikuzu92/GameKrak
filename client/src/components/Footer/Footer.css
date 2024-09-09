@@ -58,8 +58,9 @@
 .retro-footer {
   background-color: #1a1a1a;
   font-family: 'Press Start 2P', cursive;
+  /* font-size: 0.5rem; */
   border-top: 4px solid #000;
-  padding: 10px 0;
+  /* padding: 10px 0; */
 }
 
 .text-center {
