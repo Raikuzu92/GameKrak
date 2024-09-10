@@ -195,8 +195,8 @@ export const QUERY_TRANSACTIONS_BY_USER = gql`
 
 // Get all games
 export const QUERY_GAMES = gql`
-  query getGames {
-    games {
+  query getGames($limit: Int!) {
+    games(limit: $limit) {
       _id
       img
       title

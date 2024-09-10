@@ -50,11 +50,11 @@ const resolvers = {
     },
     // get all games and sort by title
     games: async (parent, { limit = 6 }) => {
-      return Game.find().sort({ title: 1 }).limit(limit).toArray();
+      return Game.find().sort({ title: 1 }).limit(limit);
     },
     // get one game by title
     gameByTitle: async (parent, { title }) => {
-      return Game.find({ title: title }).toArray();
+      return Game.find({ title: title });
     },
   },
 
@@ -78,8 +78,8 @@ const resolvers = {
       return { token, user };
     },
     // creates a new user
-    addUser: async (parent, { username, email, password, bio, favorite_game }) => {
-      const user = await User.create({ username, email, password, bio, favorite_game });
+    addUser: async (parent, { username, email, password }) => {
+      const user = await User.create({ username, email, password });
       const token = signToken(user);
       return { token, user };
     },
@@ -94,7 +94,7 @@ const resolvers = {
     removeUser: async (parent, { _id }) => {
       const user = await User.findByIdAndDelete(_id);
       if (user) {
-        await Listing.deleteMany({ user: id });
+        await Listing.deleteMany({ user: _id });
       }
       return user;
     },
@@ -122,7 +122,7 @@ const resolvers = {
     editListing: async (parent, { _id, ...args }, context) => {
       if (context.user) {
         return Listing.findOneAndUpdate(
-          { _id: id, user: context.user._id },
+          { _id: _id, user: context.user._id },
           args,
           { new: true }
         ).populate("game").populate("user");
@@ -132,9 +132,9 @@ const resolvers = {
     // removes a listing from a user
     removeListing: async (parent, { _id }, context) => {
       if (context.user) {
-        const listing = await Listing.findOneAndDelete({ _id: _id, user: context.user._id });
+        const listing = await Listing.findOneAndDelete({ _id: _id }, { user: context.user._id });
         if (listing) {
-          await User.findByIdAndUpdate({ _id: context.user._id }, { $pull: { listings: id } });
+          await User.findByIdAndUpdate({ _id: context.user._id }, { $pull: { listings: _id } });
         }
         return listing;
       }

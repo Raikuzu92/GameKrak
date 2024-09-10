@@ -1,0 +1,14 @@
+/* GamePage.css */
+
+/* Style for the scrollable game list container */
+.scrollable-container {
+    max-height: 500px;
+    overflow-y: scroll;
+    padding: 0 1rem;
+}
+
+.text-white {
+    font-size: 1rem;
+    color: #ffffff;
+    text-decoration: none;
+}

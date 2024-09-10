@@ -1,9 +1,9 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
-import { QUERY_SELL_ITEMS } from '../../utils/queries'; 
+import { QUERY_LISTINGS } from '../../utils/queries'; 
 
 const Sell = () => {
-  const { loading, data, error } = useQuery(QUERY_SELL_ITEMS); 
+  const { loading, data, error } = useQuery(QUERY_LISTINGS); 
   const sellItems = data?.sellItems || [];
 
   // Handle loading state

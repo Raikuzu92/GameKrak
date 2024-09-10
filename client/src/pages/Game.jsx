@@ -1,22 +1,40 @@
-import { useQuery } from "@apollo/client";
-
-import GameList from "../components/MonsterList";
-
-import { QUERY_GAMES } from "../utils/queries";
-import { QUERY_SINGLE_GAME } from "../utils/queries";
+import React, { useState } from 'react';
+import { useQuery } from '@apollo/client';
+import GameList from '../components/GameList';
+import { QUERY_GAMES } from '../utils/queries';
+import { Button } from 'react-bootstrap';
+import './Game.css'; // Import the CSS file
 
 const Game = () => {
-  const { loading, data } = useQuery(QUERY_GAMES);
-  const games = data?.games || [];
+  const { loading: loadingGames, data: gamesData } = useQuery(QUERY_GAMES);
+
+  const games = gamesData?.games || [];
+  const [limit, setLimit] = useState(6);
+
+  const increaseLimit = () => {
+    setLimit(prevLimit => prevLimit + 6);
+  };
 
   return (
     <main>
-      <div className='container d-flex justify-space-evenly flex-wrap'>
-        <div className='col-12 col-md-8 mb-3'>
-          {loading ? (
+      <div className="container d-flex justify-content-center flex-wrap">
+        <div className="col-12 col-md-8 mb-3">
+          {loadingGames ? (
             <div>Loading...</div>
           ) : (
-            <GameList games={games} title='Witcher Monsters' />
+            <>
+              {/* Scrollable GameList */}
+              <div className="scrollable-container">
+                <GameList games={games.slice(0, limit)} />
+              </div>
+
+              {/* Load more button */}
+              {limit < games.length && (
+                <Button onClick={increaseLimit} className="mt-3">
+                  Load more
+                </Button>
+              )}
+            </>
           )}
         </div>
       </div>
@@ -25,24 +43,3 @@ const Game = () => {
 };
 
 export default Game;
-
-
-// return (
-//   <main>
-//     <div className='flex-row justify-center'>
-//       <div
-//         className='col-12 col-md-10 mb-3 p-3'
-//         style={{ border: "1px dotted #1a1a1a" }}
-//       >
-//         <MonsterForm />
-//       </div>
-//       <div className='col-12 col-md-8 mb-3'>
-//         {loading ? (
-//           <div>Loading...</div>
-//         ) : (
-//           <MonsterList monsters={monsters} title='Witcher Monsters' />
-//         )}
-//       </div>
-//     </div>
-//   </main>
-// );
