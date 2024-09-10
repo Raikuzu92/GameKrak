@@ -49,12 +49,12 @@ const resolvers = {
       }).populate("listing").populate("buyer").populate("seller").populate("trader").populate("trade_with");
     },
     // get all games and sort by title
-    games: async () => {
-      return Game.find().sort({ title: 1 }).limit(30);
+    games: async (parent, { limit = 6 }) => {
+      return Game.find().sort({ title: 1 }).limit(limit).toArray();
     },
     // get one game by title
     gameByTitle: async (parent, { title }) => {
-      return Game.find({ title: title });
+      return Game.find({ title: title }).toArray();
     },
   },
 
