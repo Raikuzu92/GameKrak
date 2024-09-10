@@ -91,8 +91,8 @@ const resolvers = {
       throw AuthenticationError;
     },
     // removes a user and deletes all their listings
-    removeUser: async (parent, { id }) => {
-      const user = await User.findByIdAndDelete(id);
+    removeUser: async (parent, { _id }) => {
+      const user = await User.findByIdAndDelete(_id);
       if (user) {
         await Listing.deleteMany({ user: id });
       }
@@ -119,7 +119,7 @@ const resolvers = {
       throw AuthenticationError;
     },
     // edit listing for logged in user
-    editListing: async (parent, { id, ...args }, context) => {
+    editListing: async (parent, { _id, ...args }, context) => {
       if (context.user) {
         return Listing.findOneAndUpdate(
           { _id: id, user: context.user._id },
@@ -130,9 +130,9 @@ const resolvers = {
       throw AuthenticationError;
     },
     // removes a listing from a user
-    removeListing: async (parent, { id }, context) => {
+    removeListing: async (parent, { _id }, context) => {
       if (context.user) {
-        const listing = await Listing.findOneAndDelete({ _id: id, user: context.user._id });
+        const listing = await Listing.findOneAndDelete({ _id: _id, user: context.user._id });
         if (listing) {
           await User.findByIdAndUpdate({ _id: context.user._id }, { $pull: { listings: id } });
         }
@@ -164,14 +164,14 @@ const resolvers = {
       throw AuthenticationError;
     },
     // removes a transaction from a user
-    removeTransaction: async (parent, { id }, context) => {
+    removeTransaction: async (parent, { _id }, context) => {
       if (context.user) {
-        const transaction = await Transaction.findByIdAndDelete(id);
+        const transaction = await Transaction.findByIdAndDelete(_id);
         if (transaction) {
-          await User.findByIdAndUpdate({ _id: transaction.buyer }, { $pull: { transactions: id } });
-          await User.findByIdAndUpdate({ _id: transaction.seller }, { $pull: { transactions: id } });
+          await User.findByIdAndUpdate({ _id: transaction.buyer }, { $pull: { transactions: _id } });
+          await User.findByIdAndUpdate({ _id: transaction.seller }, { $pull: { transactions: _id } });
           if (transaction.trader) {
-            await User.findByIdAndUpdate({ _id: transaction.trader }, { $pull: { transactions: id } });
+            await User.findByIdAndUpdate({ _id: transaction.trader }, { $pull: { transactions: _id } });
           }
         }
         return transaction;

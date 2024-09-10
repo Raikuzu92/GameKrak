@@ -6,7 +6,7 @@ export const LOGIN_USER = gql`
     login(username: $username, password: $password) {
       token
       user {
-        id
+        _id
         username
       }
     }
@@ -31,7 +31,7 @@ export const ADD_USER = gql`
     ) {
       token
       user {
-        id
+        _id
         username
       }
     }
@@ -42,7 +42,7 @@ export const ADD_USER = gql`
 export const EDIT_USER = gql`
   mutation editUser($username: String!) {
     editUser(username: $username) {
-      id
+      _id
       username
       email
       bio
@@ -53,9 +53,9 @@ export const EDIT_USER = gql`
 
 // Remove a user and their listings
 export const REMOVE_USER = gql`
-  mutation removeUser($id: ID!) {
-    removeUser(id: $id) {
-      id
+  mutation removeUser($_id: ID!) {
+    removeUser(_id: $_id) {
+      _id
       username
     }
   }
@@ -79,7 +79,7 @@ export const ADD_LISTING = gql`
       description: $description
       trade_for: $trade_for
     ) {
-      id
+      _id
       listing_type
       price
       condition
@@ -95,7 +95,7 @@ export const ADD_LISTING = gql`
 // Edit a listing for the logged-in user
 export const EDIT_LISTING = gql`
   mutation editListing(
-    $id: ID!
+    $_id: ID!
     $listing_type: String
     $price: Float
     $condition: String
@@ -103,14 +103,14 @@ export const EDIT_LISTING = gql`
     $trade_for: String
   ) {
     editListing(
-      id: $id
+      _id: $_id
       listing_type: $listing_type
       price: $price
       condition: $condition
       description: $description
       trade_for: $trade_for
     ) {
-      id
+      _id
       listing_type
       price
       condition
@@ -121,9 +121,9 @@ export const EDIT_LISTING = gql`
 
 // Remove a listing
 export const REMOVE_LISTING = gql`
-  mutation removeListing($id: ID!) {
-    removeListing(id: $id) {
-      id
+  mutation removeListing($_id: ID!) {
+    removeListing(_id: $_id) {
+      _id
     }
   }
 `;
@@ -152,9 +152,9 @@ export const ADD_TRANSACTION = gql`
       status: $status
       notes: $notes
     ) {
-      id
+      _id
       listing {
-        id
+        _id
         game {
           title
         }
@@ -168,9 +168,9 @@ export const ADD_TRANSACTION = gql`
 
 // Remove a transaction
 export const REMOVE_TRANSACTION = gql`
-  mutation removeTransaction($id: ID!) {
-    removeTransaction(id: $id) {
-      id
+  mutation removeTransaction($_id: ID!) {
+    removeTransaction(_id: $_id) {
+      _id
     }
   }
 `;
@@ -191,7 +191,7 @@ export const ADD_GAME = gql`
       developer: $developer
       release_date: $release_date
     ) {
-      id
+      _id
       title
       genre
       publisher

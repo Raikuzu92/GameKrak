@@ -1,7 +1,7 @@
 const typeDefs = `
 
 type User {
-    id: ID!
+    _id: ID!
     username: String
     email: String
     password: String
@@ -13,7 +13,7 @@ type User {
 }
 
 type Game {
-    id: ID!
+    _id: ID!
     img: String
     title: String
     console: String
@@ -31,7 +31,7 @@ type Game {
 }
 
 type Listing {
-    id: ID!
+    _id: ID!
     game: Game
     user: User
     listing_type: String
@@ -44,7 +44,7 @@ type Listing {
 }
 
 type Transaction {
-    id: ID!
+    _id: ID!
     listing: Listing
     buyer: User
     seller: User
@@ -87,13 +87,13 @@ type Transaction {
     updateGame(img: String, title: String, console: String, genre: String, publisher: String, developer: String, critic_score: Float, total_sales: Float, na_sales: Float, jp_sales: Float, pal_sales: Float, other_sales: Float, release_date: String, last_update: String): Game
     removeGame(GameId: ID!): Game
     editUser(username: String!): User
-    removeUser(id: ID!): User
+    removeUser(_id: ID!): User
     addListing(game: ID!, user: ID!, listing_type: String!, price: Float!, condition: String!, description: String!, trade_for: String!): Listing
-    editListing(id: ID!, game: ID!, user: ID!, listing_type: String!, price: Float!, condition: String!, description: String!, trade_for: String!): Listing
-    removeListing(id: ID!): Listing
+    editListing(_id: ID!, game: ID!, user: ID!, listing_type: String!, price: Float!, condition: String!, description: String!, trade_for: String!): Listing
+    removeListing(_id: ID!): Listing
     addTransactions(listing: ID!, buyer: ID, seller: ID, trade: ID, trade_with: String, transaction_type: String!, amount: Float, status: String!, notes: String): Transaction
-    removeTransaction(id: ID!): Transaction
-    addGame(id: ID!, genre: String!, publisher: String, developer: String, release_date: String): Game
+    removeTransaction(_id: ID!): Transaction
+    addGame(_id: ID!, genre: String!, publisher: String, developer: String, release_date: String): Game
   }
 `;
 

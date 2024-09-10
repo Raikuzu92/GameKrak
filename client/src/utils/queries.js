@@ -4,18 +4,18 @@ import { gql } from "@apollo/client";
 export const QUERY_USERS = gql`
   query getUsers {
     users {
-      id
+      _id
       username
       email
       listings {
-        id
+        _id
         listing_type
         price
         condition
         description
       }
       transactions {
-        id
+        _id
         transaction_type
         amount
         status
@@ -28,20 +28,20 @@ export const QUERY_USERS = gql`
 export const QUERY_USER = gql`
   query user($username: String!) {
     user(username: $username) {
-      id
+      _id
       username
       email
       bio
       favorite_game
       listings {
-        id
+        _id
         listing_type
         price
         condition
         description
       }
       transactions {
-        id
+        _id
         transaction_type
         amount
         status
@@ -54,18 +54,18 @@ export const QUERY_USER = gql`
 export const QUERY_ME = gql`
   query me {
     me {
-      id
+      _id
       username
       email
       listings {
-        id
+        _id
         listing_type
         price
         condition
         description
       }
       transactions {
-        id
+        _id
         transaction_type
         amount
         status
@@ -78,17 +78,17 @@ export const QUERY_ME = gql`
 export const QUERY_LISTINGS = gql`
   query getListings {
     listings {
-      id
+      _id
       listing_type
       price
       condition
       description
       user {
-        id
+        _id
         username
       }
       game {
-        id
+        _id
         title
       }
     }
@@ -99,17 +99,17 @@ export const QUERY_LISTINGS = gql`
 export const QUERY_LISTINGS_BY_USER = gql`
   query getListingsByUser($username: String!) {
     listingsByUser(username: $username) {
-      id
+      _id
       listing_type
       price
       condition
       description
       user {
-        id
+        _id
         username
       }
       game {
-        id
+        _id
         title
       }
     }
@@ -120,17 +120,17 @@ export const QUERY_LISTINGS_BY_USER = gql`
 export const QUERY_SINGLE_LISTING = gql`
   query getSingleListing($listingId: ID!) {
     listing(listingId: $listingId) {
-      id
+      _id
       listing_type
       price
       condition
       description
       user {
-        id
+        _id
         username
       }
       game {
-        id
+        _id
         title
       }
     }
@@ -141,19 +141,19 @@ export const QUERY_SINGLE_LISTING = gql`
 export const QUERY_TRANSACTIONS = gql`
   query getTransactions {
     transactions {
-      id
+      _id
       listing {
-        id
+        _id
         game {
           title
         }
       }
       buyer {
-        id
+        _id
         username
       }
       seller {
-        id
+        _id
         username
       }
       transaction_type
@@ -167,23 +167,23 @@ export const QUERY_TRANSACTIONS = gql`
 export const QUERY_TRANSACTIONS_BY_USER = gql`
   query getTransactionsByUser($username: String!) {
     transactionsByUser(username: $username) {
-      id
+      _id
       listing {
-        id
+        _id
         game {
           title
         }
       }
       buyer {
-        id
+        _id
         username
       }
       seller {
-        id
+        _id
         username
       }
       trader {
-        id
+        _id
         username
       }
       transaction_type
@@ -197,7 +197,7 @@ export const QUERY_TRANSACTIONS_BY_USER = gql`
 export const QUERY_GAMES = gql`
   query getGames {
     games {
-      id
+      _id
       img
       title
       console
@@ -214,7 +214,7 @@ export const QUERY_GAMES = gql`
 export const QUERY_SINGLE_GAME = gql`
   query getGameByTitle($title: String!) {
     gameByTitle(title: $title) {
-      id
+      _id
       img
       title
       console
