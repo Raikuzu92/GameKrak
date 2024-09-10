@@ -6,7 +6,7 @@ import Auth from '../utils/auth';
 import './Login.css'; // Import the login styles
 
 const Login = () => {
-  const [formState, setFormState] = useState({ email: '', password: '' });
+  const [formState, setFormState] = useState({ username: '', password: '' });
   const [login, { error, data }] = useMutation(LOGIN_USER);
 
   const handleChange = (event) => {
@@ -39,10 +39,10 @@ const Login = () => {
               <form onSubmit={handleFormSubmit}>
                 <input
                   className="form-input"
-                  placeholder="Your email"
-                  name="email"
-                  type="email"
-                  value={formState.email}
+                  placeholder="Your username"
+                  name="username"
+                  type="text"
+                  value={formState.username}
                   onChange={handleChange}
                   required
                 />

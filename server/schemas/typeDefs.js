@@ -74,7 +74,7 @@ type Transaction {
     listingsByUser(username: String!): [Listing]
     transactionsByUser(username: String!): [Transaction]
     transactions: [Listing]
-    games: [Game]
+    games(limit: Int): [Game]
     gameByTitle(title: String!): [Game]
   }
 
@@ -82,19 +82,19 @@ type Transaction {
   
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
-    login(email: String!, password: String!): Auth
-    amount: Float, status: String, notes: String, created_at: String, updated_at: String): Transaction
-    updateGame(img: String, title: String, console: String, genre: String, publisher: String, developer: String, critic_score: Float, total_sales: Float, na_sales: Float, jp_sales: Float, pal_sales: Float, other_sales: Float, release_date: String, last_update: String): Game
-    removeGame(GameId: ID!): Game
+    login(username: String!, password: String!): Auth
     editUser(username: String!): User
     removeUser(_id: ID!): User
-    addListing(game: ID!, user: ID!, listing_type: String!, price: Float!, condition: String!, description: String!, trade_for: String!): Listing
+    addListing(gameId: ID!, user: ID!, listing_type: String!, price: Float!, condition: String!, description: String!, trade_for: String!): Listing
     editListing(_id: ID!, game: ID!, user: ID!, listing_type: String!, price: Float!, condition: String!, description: String!, trade_for: String!): Listing
     removeListing(_id: ID!): Listing
-    addTransactions(listing: ID!, buyer: ID, seller: ID, trade: ID, trade_with: String, transaction_type: String!, amount: Float, status: String!, notes: String): Transaction
+    addTransaction(listingId: ID!, buyerId: ID, sellerId: ID, traderId: ID, trade_with: String, transaction_type: String!, amount: Float, status: String!, notes: String): Transaction
     removeTransaction(_id: ID!): Transaction
-    addGame(_id: ID!, genre: String!, publisher: String, developer: String, release_date: String): Game
-  }
-`;
-
-module.exports = typeDefs;
+    addGame(title: String!, genre: String!, publisher: String, developer: String, release_date: String): Game
+    }
+    `;
+    
+    // updateGame(img: String, title: String, console: String, genre: String, publisher: String, developer: String, critic_score: Float, total_sales: Float, na_sales: Float, jp_sales: Float, pal_sales: Float, other_sales: Float, release_date: String, last_update: String): Game
+    
+    module.exports = typeDefs;
+    
