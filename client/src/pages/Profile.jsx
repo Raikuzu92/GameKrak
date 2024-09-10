@@ -57,7 +57,7 @@ const Profile = () => {
           {games.length > 0 ? (
             <GameList games={games} title="Your Listed Games" />
           ) : (
-            <h4>No games to display</h4>
+            <h4>No games to display here</h4>
           )}
         </div>
 
