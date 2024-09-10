@@ -1,15 +1,22 @@
-import React from 'react';
-import {motion} from 'framer-motion';
-import './Coin.css'; 
+import { motion } from 'framer-motion';
+import './Coin.css';
 
-const Coin = ({ start }) => {
+function App() {
   return (
-    <div className={`coin ${start ? 'coin-move' : ''}`}>
-      <motion.div
-      animate={{rotate:[0,200,200,0]}}
-      transition={{repeat:Infinity, duration:1}}></motion.div>
-    </div>
+    <motion.div
+      className="coin"
+      animate={{
+        rotate: 360,
+        right: ["-32px", "20px"], // Animate from off-screen to the visible position
+        opacity: [1, 0] // Animate opacity from 1 to 0
+      }}
+      transition={{
+        rotate: { duration: 2, repeat: Infinity, ease: "linear" },
+        right: { duration: 2, ease: "ease-in" },
+        opacity: { duration: 2, ease: "ease-in" }
+      }}
+    />
   );
-};
+}
 
-export default Coin;
+export default App;
