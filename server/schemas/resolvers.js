@@ -54,7 +54,7 @@ const resolvers = {
     },
     // get one game by title
     gameByTitle: async (parent, { title }) => {
-      return Game.find({ title: title});
+      return Game.find({ title: title });
     },
   },
 
@@ -111,7 +111,7 @@ const resolvers = {
           trade_for,
         });
         await User.findByIdAndUpdate(
-          { _id: context.user._id }, 
+          { _id: context.user._id },
           { $addToSet: { listings: listing._id } }
         );
         return listing.populate("game").populate("user");
@@ -122,8 +122,8 @@ const resolvers = {
     editListing: async (parent, { id, ...args }, context) => {
       if (context.user) {
         return Listing.findOneAndUpdate(
-          { _id: id, user: context.user._id }, 
-          args, 
+          { _id: id, user: context.user._id },
+          args,
           { new: true }
         ).populate("game").populate("user");
       }
@@ -191,6 +191,15 @@ const resolvers = {
       return game;
     },
   },
+
+//   update game
+//   updateGame: async (parent, { gameId, title, genre, publisher, developer, release_date, status }) => {
+//     return Game.findByIdAndUpdate(
+//       { _id: gameId },
+//       { title, genre, publisher, developer, release_date, status },
+//       { new: true }
+//     );
+//   }
 };
 
 module.exports = resolvers;

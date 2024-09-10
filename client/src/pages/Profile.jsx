@@ -1,9 +1,9 @@
 import { Navigate, useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
-import MonsterForm from "../components/MonsterForm";
-import MonsterList from "../components/MonsterList";
-import { QUERY_USER, QUERY_ME, QUERY_MONSTERS } from "../utils/queries";
+import { QUERY_USER, QUERY_ME, QUERY_GAMES } from "../utils/queries";
 import Auth from "../utils/auth";
+// import GameForm from "../components/GameForm"; Game Form to add games
+// import GameList from "../components/GameList"; Game List to display games
 
 const Profile = () => {
   const { username: userParam } = useParams();
@@ -13,11 +13,13 @@ const Profile = () => {
     userParam ? QUERY_USER : QUERY_ME,
     { variables: { username: userParam } }
   );
-  const { loading: monstersLoading, data: monsterData } = useQuery(QUERY_MONSTERS);
+  
+  // Query for games
+  const { loading: gamesLoading, data: gameData } = useQuery(QUERY_GAMES);
 
-  // Retrieve the correct user and monsters data
+  // Retrieve the correct user and games data
   const user = userData?.me || userData?.user || null;
-  const monsters = monsterData?.monsters || [];
+  const games = gameData?.games || [];
 
   // Redirect the user to their own profile if they're viewing their own page
   if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
@@ -25,10 +27,10 @@ const Profile = () => {
   }
 
   // Handle loading states for both queries
-  if (userLoading || monstersLoading) {
+  if (userLoading || gamesLoading) {
     return (
       <div className="loading-container">
-        {userLoading ? "Loading user data..." : "Loading monsters data..."}
+        {userLoading ? "Loading user data..." : "Loading games data..."}
       </div>
     );
   }
@@ -52,10 +54,10 @@ const Profile = () => {
         </h2>
 
         <div className="col-12 col-md-10 mb-5">
-          {monsters.length > 0 ? (
-            <MonsterList monsters={monsters} title="Witcher Monsters" />
+          {games.length > 0 ? (
+            <GameList games={games} title="Your Listed Games" />
           ) : (
-            <h4>No monsters to display</h4>
+            <h4>No games to display</h4>
           )}
         </div>
 
@@ -63,7 +65,7 @@ const Profile = () => {
           className="col-12 col-md-10 mb-3 p-3"
           style={{ border: "1px dotted #1a1a1a" }}
         >
-          <MonsterForm />
+          <GameForm />
         </div>
       </div>
     </div>
