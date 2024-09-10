@@ -1,26 +1,30 @@
+/* Coin.css */
+@keyframes spin {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+}
+
 .coin {
-    width: 50px;
-    height: 50px;
-    background: gold;
-    border-radius: 50%;
-    position: absolute;
-    top: 20%;
-    left: 50%;
-    transform: translateX(-50%);
-    animation: spin 2s linear infinite;
-  }
-  
-  .fall {
-    animation: fall 2s forwards;
-  }
-  
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
-  
-  @keyframes fall {
-    0% { top: 20%; }
-    100% { top: 70%; }
-  }
-  
+  width: 32px; /* Increase size for pixelated effect */
+  height: 32px; /* Increase size for pixelated effect */
+  background: purple; /* Color of the coin */
+  border-radius: 10%; /* Make the coin circular */
+  position: absolute; /* Absolute positioning to move it across the screen */
+  top: 50%; /* Center vertically within the viewport */
+  right: -32px; /* Start position of the coin, off-screen to the right */
+  transform: translateY(-50%); /* Adjust for vertical centering */
+  animation: spin 2s linear infinite; /* Continuous spinning animation */
+  transition: right 2s ease-in, opacity 2s ease-in; /* Smooth transition for horizontal movement and fading */
+  image-rendering: pixelated; /* Ensure pixelated rendering */
+  box-shadow: 0 0 0 2px black; /* Black border to enhance pixel effect */
+}
+
+.coin-move {
+  animation: none; /* Stop spinning animation when moving */
+  right: 20px; /* Final position of the coin inside the slot */
+  opacity: 0; /* Fade out the coin */
+}

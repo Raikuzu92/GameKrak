@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useMutation } from "@apollo/client";
 
-import { ADD_MONSTER } from "../../utils/mutations";
-import { QUERY_MONSTERS } from "../../utils/queries";
+// import { ADD_MONSTER } from "../../utils/mutations";
+// import { QUERY_MONSTERS } from "../../utils/queries";
 
 const MonsterForm = () => {
   const [formState, setFormState] = useState({

@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import { useMutation } from "@apollo/client";
-import { UPDATE_COMMENT } from "../../utils/mutations";
-import { QUERY_MONSTERS } from "../../utils/queries";
+// import React, { useState } from "react";
+// import { useMutation } from "@apollo/client";
+// import { UPDATE_COMMENT } from "../../utils/mutations";
+// import { QUERY_MONSTERS } from "../../utils/queries";
 
 const UpdateCommentForm = ({
   monsterId,

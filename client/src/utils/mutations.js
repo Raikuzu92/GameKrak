@@ -1,8 +1,8 @@
 import { gql } from "@apollo/client";
 
 export const LOGIN_USER = gql`
-  mutation login($email: String!, $password: String!) {
-    login(email: $email, password: $password) {
+  mutation login($username: String!, $password: String!) {
+    login(username: $username, password: $password) {
       token
       user {
         _id
@@ -13,8 +13,8 @@ export const LOGIN_USER = gql`
 `;
 
 export const ADD_USER = gql`
-  mutation addUser($username: String!, $email: String!, $password: String!) {
-    addUser(username: $username, email: $email, password: $password) {
+  mutation addUser($username: String!, $email: String!, $password: String!, $bio: String, $favorite_game: String) {
+    addUser(username: $username, email: $email, password: $password, bio: $bio, favorite_game: $favorite_game) {
       token
       user {
         _id
@@ -24,101 +24,168 @@ export const ADD_USER = gql`
   }
 `;
 
+
+export const ADD_LISTING = gql`
+  mutation addListing(
+    $gameId: ID!
+    $listing_type: String!
+    $price: Float
+    $condition: String!
+    $description: String
+    $trade_for: String
+
+  ) {
+    addListing(
+      gameId: $gameId
+      listing_type: $listing_type
+      price: $price
+      condition: $condition
+      description: $description
+      trade_for: $trade_for
+    ) {
+      _id
+      listing_type
+      price
+      condition
+      description
+      trade_for
+      game {
+        title
+      }
+    }
+  }
+`;
+
+export const EDIT_LISTING = gql`
+  mutation editListing(
+    $id: ID!
+    $listing_type: String
+    $price: Float
+    $condition: String
+    $description: String
+    $trade_for: String
+  ) {
+    editListing(
+      id: $id
+      listing_type: $listing_type
+      price: $price
+      condition: $condition
+      description: $description
+      trade_for: $trade_for
+    ) {
+      _id
+      listing_type
+      price
+      condition
+      description
+    }
+  }
+`;
+
+export const REMOVE_LISTING = gql`
+  mutation removeListing($id: ID!) {
+    removeListing(id: $id) {
+      _id
+    }
+  }
+`;
+
+export const ADD_TRANSACTION = gql`
+  mutation addTransaction(
+    $listingId: ID!
+    $buyerId: ID
+    $sellerId: ID!
+    $traderId: ID
+    $trade_with: ID
+    $transaction_type: String!
+    $amount: Float!
+    $status: String!
+    $notes: String
+  ) {
+    addTransaction(
+      listingId: $listingId
+      buyerId: $buyerId
+      sellerId: $sellerId
+      traderId: $traderId
+      trade_with: $trade_with
+      transaction_type: $transaction_type
+      amount: $amount
+      status: $status
+      notes: $notes
+    ) {
+      _id
+      listing {
+        _id
+        game {
+          title
+        }
+      }
+      amount
+      status
+      transaction_type
+    }
+  }
+`;
+
+export const REMOVE_TRANSACTION = gql`
+  mutation removeTransaction($id: ID!) {
+    removeTransaction(id: $id) {
+      _id
+    }
+  }
+`;
+
 export const ADD_GAME = gql`
-  mutation addMonster(
-    $monsterName: String!
-    $type: String!
-    $habitat: String!
-    $weaknesses: [String]!
+  mutation addGame(
+    $title: String!
+    $genre: String!
+    $publisher: String!
+    $developer: String!
+    $release_date: String
   ) {
-    addMonster(
-      monsterName: $monsterName
-      type: $type
-      habitat: $habitat
-      weaknesses: $weaknesses
-    ) {
-      weaknesses
-      habitat
-      type
-      monsterName
-      _id
-    }
-  }
-`;
-
-export const ADD_COMMENT = gql`
-  mutation addComment($monsterId: ID!, $commentText: String!) {
-    addComment(monsterId: $monsterId, commentText: $commentText) {
-      _id
-      comments {
-        _id
-        commentText
-        createdAt
-      }
-    }
-  }
-`;
-
-export const REMOVE_MONSTER = gql`
-  mutation removeMonster($monsterId: ID!) {
-    removeMonster(monsterId: $monsterId) {
-      _id
-    }
-  }
-`;
-
-export const REMOVE_COMMENT = gql`
-  mutation removeComment($monsterId: ID!, $commentId: ID!) {
-    removeComment(monsterId: $monsterId, commentId: $commentId) {
-      _id
-      comments {
-        _id
-        commentText
-      }
-    }
-  }
-`;
-
-export const UPDATE_COMMENT = gql`
-  mutation updateComment(
-    $monsterId: ID!
-    $commentId: ID!
-    $commentText: String!
-  ) {
-    updateComment(
-      monsterId: $monsterId
-      commentId: $commentId
-      commentText: $commentText
+    addGame(
+      title: $title
+      genre: $genre
+      publisher: $publisher
+      developer: $developer
+      release_date: $release_date
     ) {
       _id
-      comments {
-        _id
-        commentText
-      }
+      title
+      genre
+      publisher
+      developer
+      release_date
     }
   }
 `;
 
-export const UPDATE_MONSTER = gql`
-  mutation updateMonster(
-    $monsterId: ID!
-    $monsterName: String
-    $type: String
-    $habitat: String
-    $weaknesses: [String]
-  ) {
-    updateMonster(
-      monsterId: $monsterId
-      monsterName: $monsterName
-      type: $type
-      habitat: $habitat
-      weaknesses: $weaknesses
-    ) {
-      _id
-      monsterName
-      type
-      habitat
-      weaknesses
-    }
-  }
-`;
+// export const UPDATE_GAME = gql`
+//   mutation updateGame(
+//     $gameId: ID!
+//     $title: String
+//     $genre: String
+//     $publisher: String
+//     $developer: String
+//     $release_date: String
+//     $status: String
+//   ) {
+//     updateGame(
+//       gameId: $gameId
+//       title: $title
+//       genre: $genre
+//       publisher: $publisher
+//       developer: $developer
+//       release_date: $release_date
+//       status: $status
+//     ) {
+//       _id
+//       title
+//       genre
+//       publisher
+//       developer
+//       release_date
+//       status
+//     }
+//   }
+// `;

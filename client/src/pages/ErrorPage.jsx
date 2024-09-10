@@ -1,16 +1,24 @@
-import { useRouteError } from "react-router-dom";
+import React from 'react';
+import { useRouteError } from 'react-router-dom';
+import './ErrorPage.css'; // Import a custom CSS file for styling
 
 export default function ErrorPage() {
   const error = useRouteError();
-  console.error(error);
+
+  console.error('Error details:', error);
 
   return (
-    <div id="error-page">
-      <h1>Oops!</h1>
-      <p>Sorry, an unexpected error has occurred.</p>
-      <p>
-        <i>{error.statusText || error.message}</i>
-      </p>
+    <div className="error-page-container">
+      <div className="error-content">
+        <h1 className="error-title">WASTED</h1>
+        <p className="error-description">
+          Something went wrong. It seems like our game crashed. Please try again later or return to the main menu.
+        </p>
+        <p className="error-message">
+          <i>{error.statusText || error.message || 'An unexpected error occurred.'}</i>
+        </p>
+        <a href="/" className="error-home-link">Return to Main Menu</a>
+      </div>
     </div>
   );
 }

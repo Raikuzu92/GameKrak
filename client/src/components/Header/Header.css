@@ -18,7 +18,7 @@
 
 /* Make sure the navigation is aligned to the right and inline with the app name */
 .nav-links {
-  display: flex;
+  /* display: flex; */
   gap: 20px; /* Space between nav items */
 }
 
@@ -79,4 +79,16 @@
   .text-white {
     font-size: 0.9rem;
   }
+}
+
+ /* Adjust the properties of dropdown arrows */
+.custom-dropdown .dropdown-toggle::after {
+  padding-bottom: -6px;
+  font-size: 1.0rem;
+  color: #d3b1d8;
+}
+
+.custom-dropdown .dropdown-toggle:hover::after {
+  color: #ff0000; /* Change the arrow color on hover */
+  text-decoration: underline;
 }

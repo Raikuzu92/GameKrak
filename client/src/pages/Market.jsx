@@ -1,13 +1,13 @@
-import { useParams } from "react-router-dom";
-import { useQuery } from "@apollo/client";
-import { Modal, Button } from "react-bootstrap";
-import { useState } from "react";
-import CommentList from "../components/CommentList";
-import CommentForm from "../components/CommentForm";
-import UpdateMonsterForm from "../components/updateMonsterForm";
-import { QUERY_SINGLE_MONSTER } from "../utils/queries";
+// import { useParams } from "react-router-dom";
+// import { useQuery } from "@apollo/client";
+// import { Modal, Button } from "react-bootstrap";
+// import { useState } from "react";
+// import CommentList from "../components/CommentList";
+// import CommentForm from "../components/CommentForm";
+// import UpdateMonsterForm from "../components/updateMonsterForm";
+// import { QUERY_SINGLE_MONSTER } from "../utils/queries";
 
-const SingleMonster = () => {
+const Market = () => {
   const { monsterId } = useParams();
   const { loading, data } = useQuery(QUERY_SINGLE_MONSTER, {
     variables: { monsterId: monsterId },
@@ -77,4 +77,4 @@ const SingleMonster = () => {
   );
 };
 
-export default SingleMonster;
+export default Market;

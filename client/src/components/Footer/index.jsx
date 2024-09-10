@@ -3,10 +3,13 @@ import './Footer.css'; // Custom styling for the footer
 const Footer = () => {
   return (
     <footer className="retro-footer">
-      <div className="container text-center py-3">
-        <p className="mb-0 text-white">
+      <div className="d-flex justify-content-center py-3 align-items-center">
+        <div className=''>
+          <img src="../../assets/img/GitHub-white.png" alt="" />
+        </div>
+        <span className="text-white text-center p-override">
           © 2024 GameKrak. All Rights Reserved.
-        </p>
+        </span>
       </div>
     </footer>
   );

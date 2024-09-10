@@ -1,10 +1,26 @@
+/* CoinSlot.css */
 .coin-slot {
-    position: absolute;
-    bottom: 0;
-    width: 60px;
-    height: 20px;
-    background: #555;
-    border: 5px solid #000;
-    border-radius: 0 0 10px 10px;
-  }
-  
+  position: relative; /* Position relative to allow positioning of the gap and coin */
+  width: 40px; /* Width of the coin slot */
+  height: 120px; /* Height of the coin slot */
+  background: #333; /* Dark color to simulate the slot */
+  border: 2px solid #000; /* Black border to define the slot */
+  border-radius: 5px; /* Slight rounding for realism */
+  margin: 50px auto; /* Center horizontally with margin from the top */
+  display: flex; /* Flexbox to center any content inside */
+  align-items: center; /* Center content vertically */
+  justify-content: center; /* Center content horizontally */
+  overflow: hidden; /* Ensure any overflow content is hidden */
+  image-rendering: pixelated; /* Ensure pixelated rendering */
+}
+
+.slot-gap {
+  position: absolute; /* Absolute positioning to place the gap correctly */
+  width: 30px; /* Width of the visible slot */
+  height: 80px; /* Height of the visible slot */
+  background: #000; /* Black gap to simulate where the coin would go */
+  top: 20px; /* Position the gap within the slot */
+  border-radius: 5px; /* Rounded corners to match the slot */
+  image-rendering: pixelated; /* Ensure pixelated rendering */
+}
+
