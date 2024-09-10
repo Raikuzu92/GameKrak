@@ -1,7 +1,7 @@
 import { useQuery } from "@apollo/client";
 
-import MonsterList from "../components/MonsterList";
-import MonsterForm from "../components/MonsterForm";
+// import MonsterList from "../components/MonsterList";
+// import MonsterForm from "../components/MonsterForm";
 
 // import { QUERY_MONSTERS } from "../utils/queries";
 

@@ -1,79 +1,57 @@
-// import { useParams } from "react-router-dom";
-// import { useQuery } from "@apollo/client";
-// import { Modal, Button } from "react-bootstrap";
-// import { useState } from "react";
-// import CommentList from "../components/CommentList";
-// import CommentForm from "../components/CommentForm";
-// import UpdateMonsterForm from "../components/updateMonsterForm";
-// import { QUERY_SINGLE_MONSTER } from "../utils/queries";
+import React, { useState } from 'react';
+import Buy from '../components/Buy/Buy'; // Import Buy component from the components folder
+import Sell from '../components/Sell/Sell'; // Import Sell component from the components folder
+import Trade from '../components/Trade/Trade'; // Import Trade component from the components folder
 
 const Market = () => {
-  const { monsterId } = useParams();
-  const { loading, data } = useQuery(QUERY_SINGLE_MONSTER, {
-    variables: { monsterId: monsterId },
-  });
+  const [activeTab, setActiveTab] = useState('buy'); // Default to Buy tab
 
-  const monster = data?.monster || {};
-
-  const [showUpdateMonsterModal, setShowUpdateMonsterModal] = useState(false);
-
-  const handleCloseUpdateMonsterModal = () => setShowUpdateMonsterModal(false);
-  const handleShowUpdateMonsterModal = () => setShowUpdateMonsterModal(true);
-
-  if (loading) {
-    return <div>Loading...</div>;
-  }
+  const renderTab = () => {
+    switch (activeTab) {
+      case 'buy':
+        return <Buy />;
+      case 'sell':
+        return <Sell />;
+      case 'trade':
+        return <Trade />;
+      default:
+        return <Buy />;
+    }
+  };
 
   return (
-    <>
-      <div className='my-3'>
-        <h4 className='card-header bg-dark text-light p-2 m-0'>
-          {monster.monsterName}
-        </h4>
-        <div className='card-body bg-light p-2'>
-          <h5>Type:</h5>
-          <p>{monster.type}</p>
-          <h5>Habitat:</h5>
-          <p>{monster.habitat}</p>
-          <h5>Weaknesses:</h5>
-          <ul>
-            {monster.weaknesses.map((weakness, i) => (
-              <li key={i}>{weakness}</li>
-            ))}
-          </ul>
-          <Button onClick={handleShowUpdateMonsterModal}>Update Monster</Button>
-        </div>
+    <div className="marketplace">
+      <ul className="nav nav-tabs">
+        <li className="nav-item">
+          <button
+            className={`nav-link ${activeTab === 'buy' ? 'active' : ''}`}
+            onClick={() => setActiveTab('buy')}
+          >
+            Buy
+          </button>
+        </li>
+        <li className="nav-item">
+          <button
+            className={`nav-link ${activeTab === 'sell' ? 'active' : ''}`}
+            onClick={() => setActiveTab('sell')}
+          >
+            Sell
+          </button>
+        </li>
+        <li className="nav-item">
+          <button
+            className={`nav-link ${activeTab === 'trade' ? 'active' : ''}`}
+            onClick={() => setActiveTab('trade')}
+          >
+            Trade
+          </button>
+        </li>
+      </ul>
 
-        <div className='my-5'>
-          <CommentList comments={monster.comments} monsterId={monster._id} />
-        </div>
-        <div className='m-3 p-4' style={{ border: "1px dotted #1a1a1a" }}>
-          <CommentForm monsterId={monster._id} />
-        </div>
+      <div className="tab-content mt-4">
+        {renderTab()}
       </div>
-
-      <Modal
-        show={showUpdateMonsterModal}
-        onHide={handleCloseUpdateMonsterModal}
-      >
-        <Modal.Header closeButton>
-          <Modal.Title>Update Monster</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          {/* Pass initialMonsterData prop here */}
-          <UpdateMonsterForm
-            monsterId={monster._id}
-            initialMonsterData={monster}
-            handleCloseUpdateMonsterModal={handleCloseUpdateMonsterModal}
-          />
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant='secondary' onClick={handleCloseUpdateMonsterModal}>
-            Close
-          </Button>
-        </Modal.Footer>
-      </Modal>
-    </>
+    </div>
   );
 };
 

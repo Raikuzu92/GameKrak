@@ -8,16 +8,24 @@ export const QUERY_USER = gql`
       email
       listings {
         _id
-        listing_type
+        listingType
         price
         condition
         description
+        game {
+          _id
+          title
+        }
       }
       transactions {
         _id
-        transaction_type
+        transactionType
         amount
         status
+        game {
+          _id
+          title
+        }
       }
     }
   }
@@ -27,7 +35,7 @@ export const QUERY_LISTINGS = gql`
   query getListings {
     listings {
       _id
-      listing_type
+      listingType
       price
       condition
       description
@@ -47,7 +55,7 @@ export const QUERY_SINGLE_LISTING = gql`
   query getSingleListing($listingId: ID!) {
     listing(listingId: $listingId) {
       _id
-      listing_type
+      listingType
       price
       condition
       description
@@ -71,16 +79,24 @@ export const QUERY_ME = gql`
       email
       listings {
         _id
-        listing_type
+        listingType
         price
         condition
         description
+        game {
+          _id
+          title
+        }
       }
       transactions {
         _id
-        transaction_type
+        transactionType
         amount
         status
+        game {
+          _id
+          title
+        }
       }
     }
   }
@@ -95,6 +111,28 @@ export const QUERY_GAMES = gql`
       publisher
       developer
       release_date
+    }
+  }
+`;
+
+export const QUERY_SELL_ITEMS = gql`
+  query getSellItems {
+    sellItems {
+      _id
+      name
+      price
+      description
+    }
+  }
+`;
+
+export const QUERY_TRADE_ITEMS = gql`
+  query getTradeItems {
+    tradeItems {
+      _id
+      name
+      tradeFor
+      description
     }
   }
 `;
