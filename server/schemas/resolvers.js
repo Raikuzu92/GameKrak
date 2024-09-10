@@ -50,7 +50,7 @@ const resolvers = {
     },
     // get all games and sort by title
     games: async () => {
-      return Game.find().sort({ title: 1 });
+      return Game.find().sort({ title: 1 }).limit(30);
     },
     // get one game by title
     gameByTitle: async (parent, { title }) => {

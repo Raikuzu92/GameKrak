@@ -24,7 +24,7 @@ export const ADD_USER = gql`
   }
 `;
 
-export const ADD_MONSTER = gql`
+export const ADD_GAME = gql`
   mutation addMonster(
     $monsterName: String!
     $type: String!
