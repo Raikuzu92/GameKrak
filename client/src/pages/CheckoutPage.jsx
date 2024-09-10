@@ -4,7 +4,7 @@ import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
 import axios from 'axios';
 
-import CheckoutForm from './CheckoutForm'; // Import the form component
+import CheckoutForm from './CheckoutPage'; // Import the form component
 import { QUERY_ORDER_DETAILS } from '../utils/queries'; // Import the query for fetching order details
 
 const stripePromise = loadStripe('your-publishable-key-here'); // Replace with your Stripe publishable key
