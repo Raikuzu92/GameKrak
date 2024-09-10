@@ -44,7 +44,7 @@ const Header = () => {
 
                 {/* Marketplace Split Button */}
                 <ButtonGroup className="nav-item">
-                  <Link to="/marketplace" className="text-white pe-2">Market</Link>
+                  <Link to="/market/buy" className="text-white pe-2">Market</Link>
                   <NavDropdown
                     as={ButtonGroup}
                     title=""
@@ -60,7 +60,7 @@ const Header = () => {
               </nav>
 
               <div>
-                <Link className='pe-5 glitch-text' to='/'>
+                <Link className='pe-5 glitch-text' to='/market/buy'>
                   GameKrak
                 </Link>
               </div>

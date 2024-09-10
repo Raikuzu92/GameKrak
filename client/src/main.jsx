@@ -6,17 +6,14 @@ import { BrowserRouter } from "react-router-dom";
 
 
 import App from "./App.jsx";
-import Home from "./pages/Home";
+import Game from "./pages/Game.jsx";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
-import SingleMonster from "./pages/SingleMonster";
+import Market from "./pages/Market.jsx";
 import Profile from "./pages/Profile";
 import ErrorPage from "./pages/ErrorPage";
 import SplashPage from "./pages/SplashPage.jsx";
 
-
-
-import client from "./apolloClient";
 
 const router = createBrowserRouter([
   {
@@ -37,16 +34,32 @@ const router = createBrowserRouter([
         element: <Signup />,
       },
       {
-        path: "/profiles/:username",
+        path: "/profile/:username",
         element: <Profile />,
       },
       {
-        path: "/me",
+        path: "/profile/me",
         element: <Profile />,
       },
       {
-        path: "/monsters/:monsterId",
-        element: <SingleMonster />,
+        path: "/market/buy",
+        element: <Market />,
+      },
+      {
+        path: "/market/sell",
+        element: <Market />,
+      },
+      {
+        path: "/market/trade",
+        element: <Market />,
+      },
+      {
+        path: "/games",
+        element: <Game />,
+      },
+      {
+        path: "/games/:title",
+        element: <Game />,
       },
     ],
   },
