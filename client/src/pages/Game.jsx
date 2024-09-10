@@ -3,7 +3,7 @@ import { useQuery } from "@apollo/client";
 import MonsterList from "../components/MonsterList";
 import MonsterForm from "../components/MonsterForm";
 
-import { QUERY_MONSTERS } from "../utils/queries";
+// import { QUERY_MONSTERS } from "../utils/queries";
 
 const Game = () => {
   const { loading, data } = useQuery(QUERY_MONSTERS);
