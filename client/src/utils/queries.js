@@ -6,41 +6,58 @@ export const QUERY_USER = gql`
       _id
       username
       email
-    }
-  }
-`;
-
-export const QUERY_MONSTERS = gql`
-  query getMonsters {
-    monsters {
-      _id
-      monsterName
-      type
-      habitat
-      weaknesses
-      comments {
+      listings {
         _id
-        commentText
-        commentAuthor
-        createdAt
+        listing_type
+        price
+        condition
+        description
+      }
+      transactions {
+        _id
+        transaction_type
+        amount
+        status
       }
     }
   }
 `;
 
-export const QUERY_SINGLE_MONSTER = gql`
-  query getSingleMonster($monsterId: ID!) {
-    monster(monsterId: $monsterId) {
+export const QUERY_LISTINGS = gql`
+  query getListings {
+    listings {
       _id
-      monsterName
-      type
-      habitat
-      weaknesses
-      comments {
+      listing_type
+      price
+      condition
+      description
+      user {
         _id
-        commentText
-        commentAuthor
-        createdAt
+        username
+      }
+      game {
+        _id
+        title
+      }
+    }
+  }
+`;
+
+export const QUERY_SINGLE_LISTING = gql`
+  query getSingleListing($listingId: ID!) {
+    listing(listingId: $listingId) {
+      _id
+      listing_type
+      price
+      condition
+      description
+      user {
+        _id
+        username
+      }
+      game {
+        _id
+        title
       }
     }
   }
@@ -52,6 +69,32 @@ export const QUERY_ME = gql`
       _id
       username
       email
+      listings {
+        _id
+        listing_type
+        price
+        condition
+        description
+      }
+      transactions {
+        _id
+        transaction_type
+        amount
+        status
+      }
+    }
+  }
+`;
+
+export const QUERY_GAMES = gql`
+  query getGames {
+    games {
+      _id
+      title
+      genre
+      publisher
+      developer
+      release_date
     }
   }
 `;
