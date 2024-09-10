@@ -24,6 +24,7 @@ export const ADD_USER = gql`
   }
 `;
 
+
 export const ADD_LISTING = gql`
   mutation addListing(
     $gameId: ID!
@@ -32,6 +33,7 @@ export const ADD_LISTING = gql`
     $condition: String!
     $description: String
     $trade_for: String
+
   ) {
     addListing(
       gameId: $gameId
