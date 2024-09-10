@@ -65,7 +65,7 @@ type Transaction {
     addTransaction(id: ID!, listing: Listing, buyer: User, seller: User, trader: User, trade_with: Game, transaction_type: String, transaction_date: String
     amount: Float, status: String, notes: String, created_at: String, updated_at: String): Transaction
     updateGame(img: String, title: String, console: String, genre: String, publisher: String, developer: String, critic_score: Float, total_sales: Float, na_sales: Float, jp_sales: Float, pal_sales: Float, other_sales: Float, release_date: String, last_update: String): Game,   removeGame(GameId: ID!): Game
-    
+        
   }
 `;
 
