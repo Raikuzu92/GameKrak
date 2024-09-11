@@ -20,12 +20,12 @@ type Game {
     genre: String
     publisher: String
     developer: String
-    critic_score: Float
-    total_sales: Float
-    na_sales: Float
-    jp_sales: Float
-    pal_sales: Float
-    other_sales: Float
+    critic_score: String
+    total_sales: String
+    na_sales: String
+    jp_sales: String
+    pal_sales: String
+    other_sales: String
     release_date: String
     last_update: String
 }
@@ -75,7 +75,7 @@ type Transaction {
     transactionsByUser(username: String!): [Transaction]
     transactions: [Listing]
     games(limit: Int): [Game]
-    gameByTitle(title: String!): [Game]
+    gameByTitle(title: String!): Game
   }
 
 
