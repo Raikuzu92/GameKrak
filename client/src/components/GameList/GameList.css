@@ -1,18 +1,17 @@
-/* Game card with glowing border */
 .game-card {
     background-color: grey;
     border-radius: 15px;
-    padding: 20px;
-    box-shadow: 0 0 25px white, 0 0 30px black;
+    padding: 40px; 
+    box-shadow: 0 0 25px white, 0 0 30px black; 
     transition: all 0.3s ease-in-out;
     display: flex;
     flex-direction: column;
-    /* Stack content vertically */
     align-items: center;
     gap: 20px;
     height: auto;
-    min-height: 450px;
-    /* Set a minimum height for the card */
+    min-height: 600px;
+    width: 80%; 
+    max-width: 600px; 
     border: none;
 }
 
