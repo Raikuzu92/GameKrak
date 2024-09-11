@@ -1,0 +1,19 @@
+/* src/components/CartLogo.css */
+.cart-logo {
+    position: fixed; /* Fixes the position at the top of the page */
+    top: 10px; /* Adjust top spacing */
+    right: 10px; /* Adjust right spacing */
+    z-index: 1000; /* Ensures it stays on top of other elements */
+    cursor: pointer; /* Optional: change cursor to pointer on hover */
+  }
+  
+  .cart-logo i {
+    font-size: 24px; /* Adjust icon size */
+    color: #333; /* Adjust color */
+  }
+  
+  .cart-logo img {
+    width: 24px; /* Adjust image size */
+    height: auto;
+  }
+  
