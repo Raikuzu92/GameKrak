@@ -16,9 +16,11 @@ const SplashPage = () => {
 
   useEffect(() => {
     if (audioRef.current) {
+      audioRef.current.volume = 0.3; 
       audioRef.current.play();
     }
   }, []);
+
 
   return (
     <div className={`splash-page`}>
