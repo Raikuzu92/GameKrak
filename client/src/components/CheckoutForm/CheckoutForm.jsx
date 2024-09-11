@@ -1,5 +1,5 @@
 // CheckoutForm.js
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 
 function CheckoutForm() {
