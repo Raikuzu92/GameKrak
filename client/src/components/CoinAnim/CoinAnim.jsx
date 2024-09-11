@@ -36,7 +36,7 @@ const SplashPage = () => {
     setTimeout(() => {
       setStartAnimation('none');
       console.log("We did it yayyyy");
-      // navigate('/home'); // Redirect to home page
+       navigate('/Login'); // Redirect to home page
     }, 8000); // Adjust this time to match your animation duration
   };
 
