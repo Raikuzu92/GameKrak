@@ -3,12 +3,79 @@
 /* Style for the scrollable game list container */
 .scrollable-container {
     max-height: 500px;
-    overflow-y: scroll;
-    padding: 0 1rem;
+    overflow-y: auto;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Make 4-5 games per row */
+    gap: 20px; /* Space between game boxes */
+    justify-content: center;
 }
 
-.text-white {
-    font-size: 1rem;
-    color: #ffffff;
-    text-decoration: none;
+/* Game card styling for uniform size with glowing border */
+.game-card {
+    background-color: #000; /* Black background for each game */
+    color: #fff;
+    padding: 1rem;
+    border-radius: 10px;
+    border: 2px solid #fff; /* Initial white border */
+    box-shadow: 0 0 15px #fff; /* Glowing border effect */
+    animation: glowing-border 2s infinite; /* Animate the border glow */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    height: 250px; /* Adjust height to make room for more games */
+}
+
+/* Animation for glowing border */
+@keyframes glowing-border {
+    0% {
+        box-shadow: 0 0 15px #fff;
+    }
+    50% {
+        box-shadow: 0 0 15px #000;
+    }
+    100% {
+        box-shadow: 0 0 15px #fff;
+    }
+}
+
+/* Styling for game names */
+.game-name {
+    font-size: 1.2rem;
+    color: #00ffea; /* Neon turquoise for visibility */
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Remove the default scrollbar but keep scroll functionality */
+.scrollable-container::-webkit-scrollbar {
+    width: 0;
+}
+
+.scrollable-container {
+    scrollbar-width: none;
+}
+
+/* Style for load more button */
+.load-more-container {
+    text-align: center;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.load-more-btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 20px; /* Add bottom margin for visibility */
+}
+
+.load-more-btn:hover {
+    background-color: #0056b3;
 }

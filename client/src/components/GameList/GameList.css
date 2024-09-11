@@ -1,0 +1,190 @@
+/* Game card with glowing border */
+.game-card {
+    background-color: grey;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 0 25px white, 0 0 30px black;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    /* Stack content vertically */
+    align-items: center;
+    gap: 20px;
+    height: auto;
+    min-height: 450px;
+    /* Set a minimum height for the card */
+    border: none;
+}
+
+.game-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.game-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding-bottom: 5px;
+}
+
+.row.g-4 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    width: 100%; /* Ensure the row takes up full width */
+    justify-content: center; /* Center the content */
+  }
+  .row.g-4 .col-lg-4 {
+    flex: 1 1 30%; /* Allow the columns to grow and shrink */
+    max-width: 30%; /* Set a max width for each column */
+  }
+  
+  @media (max-width: 992px) {
+    .row.g-4 .col-lg-4 {
+      flex: 1 1 45%; /* Adjust for smaller screens */
+      max-width: 45%;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .row.g-4 .col-lg-4 {
+      flex: 1 1 100%; /* Full width on small screens */
+      max-width: 100%;
+    }
+  }
+  
+
+/* Logo adjustments */
+.game-logo {
+    flex-shrink: 0;
+    /* Prevents logo from shrinking */
+}
+
+.game-logo img {
+    max-width: 120px;
+    /* Set a max width for the logo */
+    max-height: 120px;
+    /* Ensure logo does not exceed height */
+    object-fit: cover;
+    /* Keeps aspect ratio without stretching */
+    border-radius: 10px;
+}
+
+/* Text content adjustments */
+.game-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: auto;
+    /* Allow height to adjust based on content */
+}
+
+/* Game title */
+.game-title {
+    color: #ffcc00;
+    font-weight: bold;
+    text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.8);
+    font-size: 1rem;
+    /* Font size for the title */
+    margin-bottom: 0.5rem;
+    white-space: nowrap;
+    /* Prevents wrapping */
+    text-overflow: ellipsis;
+    /* Adds ellipsis if the title is too long */
+}
+
+/* Console details */
+.game-console {
+    color: #ccc;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Release date on its own row */
+.game-release-date {
+    color: #ccc;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Publisher details */
+.game-publisher {
+    color: #888;
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Layout: Ensure full rows */
+.row.g-4 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    /* Gap between items */
+    width: 100%;
+    /* Full width for the row */
+    justify-content: center;
+    /* Center the content */
+    height: 100vh;
+}
+
+.row.g-4 .col-lg-4 {
+    flex: 0 0 100%;
+    /* Ensure one item per row */
+    max-width: 100%;
+    /* Limit max width */
+}
+
+@media (min-width: 992px) {
+    .row.g-4 .col-lg-4 {
+        flex: 1;
+        /* Ensure items take up space proportionally */
+    }
+}
+
+/* Load More Button Styles */
+.load-more-container {
+    text-align: center;
+    margin-top: 2rem;
+    /* Adds spacing above the button */
+}
+
+.load-more-btn {
+    background-color: #ffcc00;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.load-more-btn:hover {
+    background-color: #ff9900;
+    color: white;
+}
+
+/* Scrollbar adjustments */
+.scrollable-container {
+    overflow-y: auto;
+    /* Enable vertical scrolling if needed */
+    height: 100vh;
+    /* Adjust based on available height */
+}
+
+.scrollable-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.scrollable-container::-webkit-scrollbar-track {
+    background-color: grey;
+}
+
+.scrollable-container::-webkit-scrollbar-thumb {
+    background-color: grey;
+    border-radius: 6px;
+    border: 2px solid black;
+}

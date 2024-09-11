@@ -7,7 +7,7 @@ import axios from 'axios';
 import CheckoutForm from './Checkout'; // Import the form component
 // import { QUERY_ORDER_DETAILS } from '../utils/queries'; 
 
-const stripePromise = loadStripe('your-publishable-key-here'); // Replace with your Stripe publishable key
+// const stripePromise = loadStripe('your-publishable-key-here'); // Replace with your Stripe publishable key
 
 const Checkout = () => {
   const { loading, data } = useQuery(QUERY); // Fetch order details
