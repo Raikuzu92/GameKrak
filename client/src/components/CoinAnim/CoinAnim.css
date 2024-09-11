@@ -66,6 +66,6 @@
   
   @keyframes fall {
     0% { top: 20%; }
-    100% { top: 70%; }
+    100% { top: 70%; opacity: 0; }
   }
   
