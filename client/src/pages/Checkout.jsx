@@ -1,16 +1,16 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import { useQuery } from '@apollo/client';
 import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
 import axios from 'axios';
 
 import CheckoutForm from './Checkout'; // Import the form component
-// import { QUERY_ORDER_DETAILS } from '../utils/queries'; 
+import { QUERY_ORDER_DETAILS } from '../utils/queries'; 
 
-const stripePromise = loadStripe('your-publishable-key-here'); // Replace with your Stripe publishable key
+const stripePromise = loadStripe('pk_test_51Pw54m04EmYQV5PkYD09fxeU3N2zdihXkN34k9Z7jWBSrQhCslpt97NdtmfZxCEl1o2aPxqbC9X14cp6QPIzFEmc00lCXsfxYq'); // Replace with your Stripe publishable key
 
 const Checkout = () => {
-  const { loading, data } = useQuery(QUERY); // Fetch order details
+  const { loading, data } = useQuery(QUERY_ORDER_DETAILS); // Fetch order details
   const orderDetails = data?.order || {}; // Access order details from the query
   const [error, setError] = useState(null);
 

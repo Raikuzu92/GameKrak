@@ -227,8 +227,11 @@ export const QUERY_SINGLE_GAME = gql`
   }
 `;
 
-// export const QUERY_ORDER_DETAILS = gql`
-//   query {
-
-//   }
-// `;
+export const QUERY_ORDER_DETAILS = gql`
+  query GetOrderDetails {
+    order {
+      _id
+      totalAmount
+    }
+  }
+`;
