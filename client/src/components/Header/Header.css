@@ -92,3 +92,9 @@
   color: #ff0000; /* Change the arrow color on hover */
   text-decoration: underline;
 }
+
+.title-container {
+  position: absolute;  /* Absolute positioning to center it */
+  left: 50%;
+  transform: translateX(-50%);  /* Center it horizontally */
+}

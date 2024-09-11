@@ -11,19 +11,16 @@ const Header = () => {
     console.log("Logged out");
   };
 
-  const tempLoggedIn = true
+  const tempLoggedIn = true;
 
   return (
-
     <div>
-      {/* Uncomment once loggedIn logic is set */}
-      {/* {Auth.loggedIn() ? ( */}
       {tempLoggedIn ? (
         <>
-          <header className='retro-header pt-5 pb-2 px-5 align-center'>
+          <header className='retro-header pt-5 pb-4 px-5'>
             <div className='flex-row justify-space-between-lg justify-center align-center'>
-              <nav className="ps-2 nav-links d-flex align-items-center">
-                <Link className="nav-item text-white" to="/profile">
+              <nav className="nav-links d-flex align-items-center flex-grow-1">
+                <Link className="nav-item text-white" to="/profile" style={{ fontSize: "medium" }}>
                   Profile
                 </Link>
 
@@ -59,15 +56,20 @@ const Header = () => {
                 </ButtonGroup>
               </nav>
 
-              <div>
-                <Link className='pe-5 glitch-text' to='/'>
+
+              {/* Centered GameKrak Title */}
+              <div className="title-container text-center flex-grow-1">
+                <Link className='glitch-text' to='/'>
+
                   GameKrak
                 </Link>
               </div>
 
-              <span className="nav-item text-white logout pe-1" onClick={logout}>
-                Logout
-              </span>
+              <div className="d-flex justify-content-end flex-grow-1">
+                <span className="nav-item text-white logout pe-1" onClick={logout}>
+                  Logout
+                </span>
+              </div>
             </div>
           </header>
         </>
