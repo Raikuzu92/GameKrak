@@ -7,7 +7,7 @@
   background: #000;
   overflow: hidden;
   /* Fallback color */
-  background-image: url('/client/src/assets/img/retro-splash.jpg');
+  background-image: url('./retro-splash4.png');
   /* Path to your background image */
   background-size: cover;
   /* Ensures the image covers the entire area */
