@@ -68,7 +68,6 @@ type Transaction {
   type Query {
     users: [User]
     user(username: String!): User
-    game(gameId: ID!): Game
     me: User
     listings: [Listing]
     listingsByUser(username: String!): [Listing]

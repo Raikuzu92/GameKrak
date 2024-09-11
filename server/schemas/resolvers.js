@@ -54,8 +54,8 @@ const resolvers = {
     },
     // get one game by title
     gameByTitle: async (parent, { title }) => {
-      return Game.find({ title: title });
-    },
+      return Game.findOne({ title: title });
+    },      
   },
 
   Mutation: {

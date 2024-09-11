@@ -15,6 +15,7 @@ import ErrorPage from "./pages/ErrorPage";
 import SplashPage from "./pages/SplashPage.jsx";
 import Cart from "./pages/Cart.jsx";
 import Checkout from "./pages/Checkout.jsx";
+import Search from "./pages/Search.jsx";
 
 import GameSingle from './components/GameSingle/index.jsx';
 
@@ -65,12 +66,16 @@ const router = createBrowserRouter([
         element: <Checkout />,
       },
       {
+        path: "/search",
+        element: <Search />,
+      },
+      {
         path: "/games",
         element: <Game />,
       },
       {
-        path: "/games/:id",
-        element: <GameSingle games={Game} />, // Pass in the games prop
+        path: "/games/single",
+        element: <GameSingle games={Game} />,
       },
     ],
   },

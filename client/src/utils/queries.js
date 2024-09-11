@@ -212,17 +212,14 @@ export const QUERY_GAMES = gql`
 
 // Get a game by title
 export const QUERY_SINGLE_GAME = gql`
-  query getGameByTitle($title: String!) {
+  query gameByTitle($title: String!) {
     gameByTitle(title: $title) {
       _id
-      img
       title
+      img
       console
-      genre
-      publisher
-      developer
-      critic_score
       release_date
+      publisher
     }
   }
 `;
