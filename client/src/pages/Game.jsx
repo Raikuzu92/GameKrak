@@ -6,10 +6,15 @@ import { Button } from 'react-bootstrap';
 import './Game.css'; // Import the CSS file
 
 const Game = () => {
-  const { loading: loadingGames, data: gamesData } = useQuery(QUERY_GAMES);
+  const [limit, setLimit] = useState(6);
+  
+  const { loading: loadingGames, data: gamesData } = useQuery(QUERY_GAMES, {
+    variables: { limit: limit },
+  });
+
+  console.log(gamesData)
 
   const games = gamesData?.games || [];
-  const [limit, setLimit] = useState(6);
 
   const increaseLimit = () => {
     setLimit(prevLimit => prevLimit + 6);
@@ -25,7 +30,7 @@ const Game = () => {
             <>
               {/* Scrollable GameList */}
               <div className="scrollable-container">
-                <GameList games={games.slice(0, limit)} />
+                <GameList games={games} />
               </div>
 
               {/* Load more button */}

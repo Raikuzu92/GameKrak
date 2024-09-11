@@ -13,6 +13,8 @@ import Market from "./pages/Market.jsx";
 import Profile from "./pages/Profile";
 import ErrorPage from "./pages/ErrorPage";
 import SplashPage from "./pages/SplashPage.jsx";
+import Cart from "./pages/Cart.jsx";
+import Checkout from "./pages/Checkout.jsx";
 
 
 const router = createBrowserRouter([
@@ -52,6 +54,14 @@ const router = createBrowserRouter([
       {
         path: "/market/trade",
         element: <Market />,
+      },
+      // {
+      //   path: "/market/cart",
+      //   element: <Cart />,
+      // },
+      {
+        path: "/market/checkout",
+        element: <Checkout />,
       },
       {
         path: "/games",
