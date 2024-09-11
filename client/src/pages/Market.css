@@ -1,36 +1,49 @@
 .marketplace-container {
-    margin: 20px;
-  }
-  
-  .tab-buttons {
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 20px;
-  }
-  
-  .tab-buttons button {
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    border: none;
-    background-color: #f0f0f0;
-    transition: background-color 0.3s;
-  }
-  
-  .tab-buttons button.active {
-    background-color: #007bff;
-    color: white;
-    font-weight: bold;
-  }
-  
-  .tab-buttons button:hover {
-    background-color: #e0e0e0;
-  }
-  
-  .tab-content {
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #fafafa;
-  }
-  
+  margin: 20px;
+  background-color: #1a1a1a; /* Dark background for gamer vibe */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(156, 153, 153, 0.5); /* Neon-like glow effect */
+}
+
+.tab-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.tab-buttons button {
+  padding: 15px 30px;
+  font-size: 18px;
+  cursor: pointer;
+  border: 3px solid #ffffff; /* Neon border */
+  color: #ffffff; /* Neon text */
+  background-color: transparent;
+  font-family: 'Press Start 2P', cursive; /* Retro game font */
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  outline: none;
+}
+
+.tab-buttons button.active {
+  background-color: #ffffff; /* Active tab glow */
+  color: #1a1a1a; /* Invert text color */
+  box-shadow: 0 0 10px #ffffff, 0 0 40px #ffffff; /* Glowing effect */
+}
+
+.tab-buttons button:hover {
+  background-color: white; /* Darker blue on hover */
+  color: black;
+  border-color: black;
+  transform: scale(1.1); /* Grow slightly on hover */
+}
+
+.tab-content {
+  padding: 20px;
+  border: 3px solid #ffffff; /* Neon border around content */
+  border-radius: 8px;
+  background-color: #000000; /* Darker content area */
+  color: #ffffff;
+  font-family: 'jetbrains mono', cursive; /* Retro font for content too */
+}

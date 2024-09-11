@@ -18,7 +18,7 @@ const Sell = () => {
 
   // Handle empty data
   if (!sellItems.length) {
-    return <h3>No items available for sale at the moment.</h3>;
+    return <div>No items available for sale at the moment.</div>;
   }
 
   return (

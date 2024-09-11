@@ -60,7 +60,7 @@ const Header = () => {
               </nav>
 
               <div>
-                <Link className='pe-5 glitch-text' to='/market/buy'>
+                <Link className='pe-5 glitch-text' to='/'>
                   GameKrak
                 </Link>
               </div>
