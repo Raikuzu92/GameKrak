@@ -1,18 +1,16 @@
 import React, { useState } from 'react';
 import { useQuery } from '@apollo/client';
 import GameList from '../components/GameList';
+import GameSingle from '../components/GameSingle';
 import { QUERY_GAMES } from '../utils/queries';
-import { Button } from 'react-bootstrap';
-import './Game.css'; // Import the CSS file
+import './Game.css';
 
 const Game = () => {
-  const [limit, setLimit] = useState(6);
-  
+  const [limit, setLimit] = useState(10);
+
   const { loading: loadingGames, data: gamesData } = useQuery(QUERY_GAMES, {
     variables: { limit: limit },
   });
-
-  console.log(gamesData)
 
   const games = gamesData?.games || [];
 
@@ -28,17 +26,18 @@ const Game = () => {
             <div>Loading...</div>
           ) : (
             <>
-              {/* Scrollable GameList */}
               <div className="scrollable-container">
                 <GameList games={games} />
               </div>
 
               {/* Load more button */}
-              {limit < games.length && (
-                <Button onClick={increaseLimit} className="mt-3">
-                  Load more
-                </Button>
-              )}
+              <div className="load-more-container">
+                {limit < games.length && (
+                  <button onClick={increaseLimit} className="load-more-btn">
+                    Load more
+                  </button>
+                )}
+              </div>
             </>
           )}
         </div>

@@ -16,6 +16,7 @@ import SplashPage from "./pages/SplashPage.jsx";
 import Cart from "./pages/Cart.jsx";
 import Checkout from "./pages/Checkout.jsx";
 
+import GameSingle from './components/GameSingle/index.jsx';
 
 const router = createBrowserRouter([
   {
@@ -68,8 +69,8 @@ const router = createBrowserRouter([
         element: <Game />,
       },
       {
-        path: "/games/:title",
-        element: <Game />,
+        path: "/games/:id",
+        element: <GameSingle games={Game} />, // Pass in the games prop
       },
     ],
   },
