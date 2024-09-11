@@ -14,6 +14,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import CartLogo from './components/CartLogo/Cartlogo'; // Import the CartLogo component
 
+
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
   uri: '/graphql',
