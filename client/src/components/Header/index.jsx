@@ -56,9 +56,11 @@ const Header = () => {
                 </ButtonGroup>
               </nav>
 
+
               {/* Centered GameKrak Title */}
               <div className="title-container text-center flex-grow-1">
                 <Link className='glitch-text' to='/'>
+
                   GameKrak
                 </Link>
               </div>

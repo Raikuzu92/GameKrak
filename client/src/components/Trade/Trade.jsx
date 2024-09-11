@@ -18,7 +18,7 @@ const Trade = () => {
 
   // Handle empty data
   if (!tradeItems.length) {
-    return <h3>No items available for trade at the moment.</h3>;
+    return <div>No items available for trade at the moment.</div>;
   }
 
   return (

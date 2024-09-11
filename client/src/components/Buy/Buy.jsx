@@ -18,7 +18,7 @@ const Buy = () => {
 
   // Handle empty data
   if (!games.length) {
-    return <h3>No games available for purchase at the moment.</h3>;
+    return <div>No games available for purchase at the moment.</div>;
   }
 
   return (

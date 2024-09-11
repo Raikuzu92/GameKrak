@@ -1,3 +1,4 @@
+// src/App.jsx
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import {
@@ -11,6 +12,7 @@ import { Outlet } from 'react-router-dom';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
+import CartLogo from './components/CartLogo/Cartlogo'; // Import the CartLogo component
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -40,6 +42,7 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <div className="flex-column justify-flex-start min-100-vh">
+        <CartLogo /> {/* Add CartLogo here */}
         <Header />
         <div className="">
           <Outlet />
