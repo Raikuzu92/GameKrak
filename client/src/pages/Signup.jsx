@@ -91,6 +91,10 @@ const Signup = () => {
                 {error.message}
               </div>
             )}
+
+            <p className="login-link pt-2" style={{ color: "white" }}>
+              Already have an account? <Link className="glitch-text" style={{ fontSize: "medium" }} to="/login">Log in</Link>
+            </p>
           </div>
         </div>
       </div>
