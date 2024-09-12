@@ -1,0 +1,159 @@
+/* Universal selector to make all text white */
+* {
+    color: #ffffff;
+  }
+  
+  /* Container for the entire form */
+  .marketplace-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #101010; /* Dark background for a futuristic feel */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Stronger shadow for depth */
+    font-family: 'Press Start 2P', cursive; /* Pixel font */
+  }
+  
+  /* Heading style */
+  .marketplace-container h2 {
+    font-size: 2.5rem;
+    color: #00ff00; /* Glitch green color */
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00; /* Glitch effect */
+  }
+  
+  /* Form label styles */
+  .form-label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    font-family: 'Press Start 2P', cursive; /* Pixel font */
+    color: #ffffff; /* Ensuring labels are white */
+  }
+  
+  /* Form control styles */
+  .form-control {
+    border-radius: 4px;
+    border: 1px solid #444;
+    background-color: white; /* Darker input background */
+    box-shadow: none;
+    font-family: 'Press Start 2P', cursive; /* Pixel font */
+    color: #ffffff; /* Ensuring input text is white */
+  }
+  
+  /* Form control on focus */
+  .form-control:focus {
+    border-color: #4750ff; /* Glitch blue color */
+    background-color: #303030;
+    box-shadow: 0 0 0 0.2rem rgba(71, 80, 255, 0.25); /* Glitch effect */
+    outline: none;
+  }
+  
+  /* Input field styles */
+  input[type="text"],
+  input[type="number"],
+  textarea {
+    font-size: 1rem;
+    padding: 0.5rem;
+    border-radius: 4px;
+    color: #ffffff; /* Ensuring text is white */
+  }
+  
+  /* Price input field */
+  #formPrice .form-control {
+    background-color: #333; /* Darker background for price field */
+  }
+  
+  /* Button styles */
+  button {
+    background-color: #4750ff; /* Glitch blue color */
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    font-family: 'Press Start 2P', cursive; /* Pixel font */
+    font-size: 1rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    color: #ffffff; /* Ensuring button text is white */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Button shadow */
+  }
+  
+  button:hover {
+    background-color: #3b42d6; /* Slightly darker blue */
+  }
+  
+  /* Alert message */
+  .alert {
+    background-color: #202020;
+    color: #ff5c5c; /* Warning color */
+    font-family: 'Press Start 2P', cursive; /* Pixel font */
+    font-size: 1rem;
+  }
+  
+  /* Lists for game suggestions */
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    padding: 10px;
+    background-color: white; /* Dark background for list items */
+    border-bottom: 1px solid #444;
+    color: #ffffff; /* Ensuring list item text is white */
+    cursor: pointer;
+  }
+  
+  li:hover {
+    background-color: #404040; /* Slightly lighter background on hover */
+  }
+  
+/* Placeholder styles */
+.form-control::placeholder {
+    color: #ffffff; /* White placeholder text */
+}
+
+/* Ensure the dropdown menu is visible and above other elements */
+.form-control {
+    position: relative; /* Ensure it can be positioned correctly */
+  }
+  
+  .form-control select {
+    position: relative; /* Ensure the select element is positioned correctly */
+    z-index: 10; /* Bring it to the front */
+  }
+  
+  /* Style dropdown options */
+  .form-control option {
+    color: #ffffff; /* Ensure text color is white */
+    background-color: #202020; /* Background color for options */
+  }
+  
+  /* Ensure the dropdown menu is visible */
+  .form-control {
+    background-color: #202020; /* Dark background for the dropdown */
+    color: #ffffff; /* Text color */
+    border: 1px solid #444; /* Border color */
+  }
+  
+  /* Dropdown menu styling */
+  .form-control select {
+    background-color: white; /* Dropdown background */
+    color: #ffffff; /* Dropdown text color */
+    border: 1px solid #444; /* Dropdown border */
+  }
+  
+  /* Ensure the dropdown list is positioned correctly */
+  .form-control {
+    position: relative;
+    overflow: visible; /* Ensure overflow doesn’t clip the dropdown */
+  }
+  
+  /* Dropdown container styling */
+  .form-control select {
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 0 0 0 0.2rem rgba(71, 80, 255, 0.25); /* Glitch effect */
+    color: white; /* Text color */
+  }
+  

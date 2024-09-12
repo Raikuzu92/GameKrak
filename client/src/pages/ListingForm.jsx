@@ -3,6 +3,7 @@ import { useMutation, useQuery } from "@apollo/client";
 import { Form, Button, Alert, Col } from "react-bootstrap";
 import { QUERY_GAMES } from "../utils/queries"; // Query to fetch games by name
 import { ADD_LISTING } from "../utils/mutations"; // Mutation to add listing
+import "./ListingForm.css"; // Import custom CSS for further styling
 
 const ListingForm = () => {
   const [listingType, setListingType] = useState("buy");
@@ -69,6 +70,7 @@ const ListingForm = () => {
           as="select"
           value={listingType}
           onChange={(e) => setListingType(e.target.value)}
+          style={{ color: "white" }}
         >
           <option value="buy">Buy</option>
           <option value="sell">Sell</option>
@@ -78,10 +80,11 @@ const ListingForm = () => {
 
       {/* Game Selection */}
       <Form.Group controlId="formGameTitle">
-        <Form.Label>Game</Form.Label>
+        <Form.Label className="mt-5">Game</Form.Label>
         <Form.Control
           type="text"
           placeholder="Enter game title"
+          style={{ color: "white" }}
           value={gameTitle}
           onChange={(e) => setGameTitle(e.target.value)}
         />
@@ -101,7 +104,7 @@ const ListingForm = () => {
       {(listingType === "buy" || listingType === "sell") && (
         <>
           <Form.Group controlId="formPrice">
-            <Form.Label>Price</Form.Label>
+            <Form.Label className="mt-5" >Price</Form.Label>
             <Form.Control
               type="number"
               placeholder="Enter price"
@@ -114,7 +117,7 @@ const ListingForm = () => {
 
       {/* Condition is required for all listing types */}
       <Form.Group controlId="formCondition">
-        <Form.Label>Condition</Form.Label>
+        <Form.Label className="mt-5" >Condition</Form.Label>
         <Form.Control
           as="select"
           value={condition}
@@ -128,26 +131,28 @@ const ListingForm = () => {
         </Form.Control>
       </Form.Group>
 
-      {/* Description Field */}
+      {/* Description Field */
       <Form.Group controlId="formDescription">
-        <Form.Label>Description</Form.Label>
+        <Form.Label className="mt-5">Description</Form.Label>
         <Form.Control
           as="textarea"
           rows={3}
           placeholder="Enter a description"
+          style={{ color: "white" }}
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />
-      </Form.Group>
+      </Form.Group>}
 
       {/* Conditional Fields for Trade */}
       {listingType === "trade" && (
         <>
           <Form.Group controlId="formTradeFor">
-            <Form.Label>Looking to Trade For</Form.Label>
+            <Form.Label className="mt-5" >Looking to Trade For</Form.Label>
             <Form.Control
               type="text"
               placeholder="Enter game title you want to trade for"
+              style={{ color: "white" }}
               value={tradeForTitle}
               onChange={(e) => setTradeForTitle(e.target.value)}
             />
@@ -165,7 +170,8 @@ const ListingForm = () => {
         </>
       )}
 
-      <Button
+      <Button 
+        className="mt-5"
         type="submit"
         disabled={!selectedGameId || (listingType === "trade" && !tradeForId)}
       >
