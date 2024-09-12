@@ -4,7 +4,7 @@
     "email": "gamelover42@example.com",
     "password": "$2a$12$hashedPassword1",
     "bio": "A retro game enthusiast. I collect games from the 90s and early 2000s.",
-    "favoriteGame": "The Legend of Zelda: Ocarina of Time",
+    "favorite_game": "The Legend of Zelda: Ocarina of Time",
     "listings": [],
     "transactions": []
   },
@@ -13,7 +13,7 @@
     "email": "pixelmaster@example.com",
     "password": "$2a$12$hashedPassword2",
     "bio": "Passionate about pixel art games and RPGs!",
-    "favoriteGame": "Final Fantasy VII",
+    "favorite_game": "Final Fantasy VII",
     "listings": [],
     "transactions": []
   },
@@ -22,7 +22,7 @@
     "email": "retrogamer88@example.com",
     "password": "$2a$12$hashedPassword3",
     "bio": "Obsessed with retro consoles and arcade games.",
-    "favoriteGame": "Street Fighter II",
+    "favorite_game": "Street Fighter II",
     "listings": [],
     "transactions": []
   },
@@ -31,7 +31,7 @@
     "email": "zeldafanatic@example.com",
     "password": "$2a$12$hashedPassword4",
     "bio": "If it's Zelda, I love it.",
-    "favoriteGame": "The Legend of Zelda: Breath of the Wild",
+    "favorite_game": "The Legend of Zelda: Breath of the Wild",
     "listings": [],
     "transactions": []
   },
@@ -40,7 +40,7 @@
     "email": "mariomaster@example.com",
     "password": "$2a$12$hashedPassword5",
     "bio": "Mastering every Mario game since 1990.",
-    "favoriteGame": "Super Mario 64",
+    "favorite_game": "Super Mario 64",
     "listings": [],
     "transactions": []
   },
@@ -49,7 +49,7 @@
     "email": "sonicspeedster@example.com",
     "password": "$2a$12$hashedPassword6",
     "bio": "Sonic is the fastest thing alive!",
-    "favoriteGame": "Sonic the Hedgehog",
+    "favorite_game": "Sonic the Hedgehog",
     "listings": [],
     "transactions": []
   },
@@ -58,7 +58,7 @@
     "email": "rpgking@example.com",
     "password": "$2a$12$hashedPassword7",
     "bio": "Role-playing games are my life.",
-    "favoriteGame": "Chrono Trigger",
+    "favorite_game": "Chrono Trigger",
     "listings": [],
     "transactions": []
   },
@@ -67,7 +67,7 @@
     "email": "fpspro@example.com",
     "password": "$2a$12$hashedPassword8",
     "bio": "First-person shooters are where I excel.",
-    "favoriteGame": "Call of Duty: Modern Warfare",
+    "favorite_game": "Call of Duty: Modern Warfare",
     "listings": [],
     "transactions": []
   },
@@ -76,7 +76,7 @@
     "email": "puzzlegeek@example.com",
     "password": "$2a$12$hashedPassword9",
     "bio": "I love games that challenge the mind.",
-    "favoriteGame": "Tetris",
+    "favorite_game": "Tetris",
     "listings": [],
     "transactions": []
   },
@@ -85,7 +85,7 @@
     "email": "fightingchamp@example.com",
     "password": "$2a$12$hashedPassword10",
     "bio": "Competitive fighting games are my arena.",
-    "favoriteGame": "Mortal Kombat",
+    "favorite_game": "Mortal Kombat",
     "listings": [],
     "transactions": []
   },
@@ -94,7 +94,7 @@
     "email": "strategyguru@example.com",
     "password": "$2a$12$hashedPassword11",
     "bio": "Mastermind behind every strategy game.",
-    "favoriteGame": "Age of Empires II",
+    "favorite_game": "Age of Empires II",
     "listings": [],
     "transactions": []
   },
@@ -103,7 +103,7 @@
     "email": "platformerpro@example.com",
     "password": "$2a$12$hashedPassword12",
     "bio": "Platformers are the ultimate test of skill.",
-    "favoriteGame": "Super Meat Boy",
+    "favorite_game": "Super Meat Boy",
     "listings": [],
     "transactions": []
   },
@@ -112,7 +112,7 @@
     "email": "arcadeaddict@example.com",
     "password": "$2a$12$hashedPassword13",
     "bio": "Arcade halls are my second home.",
-    "favoriteGame": "Pac-Man",
+    "favorite_game": "Pac-Man",
     "listings": [],
     "transactions": []
   },
@@ -121,7 +121,7 @@
     "email": "sportsfreak@example.com",
     "password": "$2a$12$hashedPassword14",
     "bio": "If it's a sports game, I've played it.",
-    "favoriteGame": "FIFA 18",
+    "favorite_game": "FIFA 18",
     "listings": [],
     "transactions": []
   },
@@ -130,7 +130,7 @@
     "email": "racerlegend@example.com",
     "password": "$2a$12$hashedPassword15",
     "bio": "Racing games fuel my need for speed.",
-    "favoriteGame": "Need for Speed: Underground",
+    "favorite_game": "Need for Speed: Underground",
     "listings": [],
     "transactions": []
   },
@@ -139,7 +139,7 @@
     "email": "indiegamelover@example.com",
     "password": "$2a$12$hashedPassword16",
     "bio": "Supporting indie games since day one.",
-    "favoriteGame": "Hollow Knight",
+    "favorite_game": "Hollow Knight",
     "listings": [],
     "transactions": []
   },
@@ -148,7 +148,7 @@
     "email": "mmorpgfanatic@example.com",
     "password": "$2a$12$hashedPassword17",
     "bio": "MMORPGs are where I lose myself.",
-    "favoriteGame": "World of Warcraft",
+    "favorite_game": "World of Warcraft",
     "listings": [],
     "transactions": []
   },
@@ -157,7 +157,7 @@
     "email": "stealthexpert@example.com",
     "password": "$2a$12$hashedPassword18",
     "bio": "Stealth games are all about patience and planning.",
-    "favoriteGame": "Metal Gear Solid",
+    "favorite_game": "Metal Gear Solid",
     "listings": [],
     "transactions": []
   },
@@ -166,7 +166,7 @@
     "email": "survivalist@example.com",
     "password": "$2a$12$hashedPassword19",
     "bio": "Survival games keep me on edge.",
-    "favoriteGame": "Minecraft",
+    "favorite_game": "Minecraft",
     "listings": [],
     "transactions": []
   },
@@ -175,7 +175,7 @@
     "email": "adventuretime@example.com",
     "password": "$2a$12$hashedPassword20",
     "bio": "Adventure games are my go-to genre.",
-    "favoriteGame": "Uncharted 4: A Thief's End",
+    "favorite_game": "Uncharted 4: A Thief's End",
     "listings": [],
     "transactions": []
   },
@@ -184,7 +184,7 @@
     "email": "retrocollector@example.com",
     "password": "$2a$12$hashedPassword21",
     "bio": "Collecting every retro game I can find.",
-    "favoriteGame": "Super Mario Bros.",
+    "favorite_game": "Super Mario Bros.",
     "listings": [],
     "transactions": []
   },
@@ -193,7 +193,7 @@
     "email": "fantasyhero@example.com",
     "password": "$2a$12$hashedPassword22",
     "bio": "Fantasy RPGs are my escape from reality.",
-    "favoriteGame": "The Witcher 3: Wild Hunt",
+    "favorite_game": "The Witcher 3: Wild Hunt",
     "listings": [],
     "transactions": []
   },
@@ -202,7 +202,7 @@
     "email": "scifistrategist@example.com",
     "password": "$2a$12$hashedPassword23",
     "bio": "Sci-fi and strategy games go hand in hand.",
-    "favoriteGame": "StarCraft II",
+    "favorite_game": "StarCraft II",
     "listings": [],
     "transactions": []
   },
@@ -211,7 +211,7 @@
       "email": "sandboxmaster@example.com",
       "password": "$2a$12$hashedPassword24",
       "bio": "Building virtual worlds, one block at a time.",
-      "favoriteGame": "Minecraft",
+      "favorite_game": "Minecraft",
       "listings": [],
       "transactions": []
   },
@@ -220,7 +220,7 @@
       "email": "dungeoncrawler@example.com",
       "password": "$2a$12$hashedPassword25",
       "bio": "I live for dungeon crawlers and roguelikes.",
-      "favoriteGame": "Diablo II",
+      "favorite_game": "Diablo II",
       "listings": [],
       "transactions": []
   }

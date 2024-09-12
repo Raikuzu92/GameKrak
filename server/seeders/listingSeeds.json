@@ -1,0 +1,123 @@
+[
+    {
+      "game": "66e1df09652f1dfa0afbea2c",
+      "user": "66e1e01fd69a9c598dfc27af",
+      "listing_type": "buy",
+      "price": 50,
+      "condition": "new",
+      "description": "Looking to buy a mint condition copy of this classic game."
+    },
+    {
+      "game": "66e1e020d69a9c598dfc545a",
+      "user": "66e1e01fd69a9c598dfc27b0",
+      "listing_type": "buy",
+      "price": 30,
+      "condition": "very good",
+      "description": "Seeking a gently used version of this game."
+    },
+    {
+      "game": "66e1df09652f1dfa0afbe00c",
+      "user": "66e1e01fd69a9c598dfc27b1",
+      "listing_type": "buy",
+      "price": 40,
+      "condition": "good",
+      "description": "In the market for a well-loved copy of this title."
+    },
+    {
+      "game": "66e1df09652f1dfa0afbea23",
+      "user": "66e1e01fd69a9c598dfc27b2",
+      "listing_type": "buy",
+      "price": 60,
+      "condition": "like new",
+      "description": "Willing to pay top dollar for a near-mint copy."
+    },
+    {
+      "game": "66e1e022d69a9c598dfca694",
+      "user": "66e1e01fd69a9c598dfc27b3",
+      "listing_type": "buy",
+      "price": 25,
+      "condition": "acceptable",
+      "description": "Looking for a playable copy, condition not critical."
+    },
+    {
+      "game": "66e1df09652f1dfa0afbe224",
+      "user": "66e1e01fd69a9c598dfc27c3",
+      "listing_type": "sell",
+      "price": 55,
+      "condition": "new",
+      "description": "Selling a brand-new, sealed copy of this game."
+    },
+    {
+      "game": "66e1df09652f1dfa0afbdb35",
+      "user": "66e1e01fd69a9c598dfc27b4",
+      "listing_type": "sell",
+      "price": 35,
+      "condition": "very good",
+      "description": "Gently used copy available for sale."
+    },
+    {
+      "game": "66e1e020d69a9c598dfc3e3d",
+      "user": "66e1e01fd69a9c598dfc27b5",
+      "listing_type": "sell",
+      "price": 45,
+      "condition": "good",
+      "description": "Selling a well-maintained copy."
+    },
+    {
+      "game": "66e1df07652f1dfa0afb7665",
+      "user": "66e1e01fd69a9c598dfc27b6",
+      "listing_type": "sell",
+      "price": 65,
+      "condition": "like new",
+      "description": "Like new condition, barely played."
+    },
+    {
+      "game": "66e1df08652f1dfa0afbc1bd",
+      "user": "66e1e01fd69a9c598dfc27bb",
+      "listing_type": "sell",
+      "price": 20,
+      "condition": "acceptable",
+      "description": "Selling a well-worn copy, price negotiable."
+    },
+    {
+      "game": "66e1df09652f1dfa0afbe24b",
+      "user": "66e1e01fd69a9c598dfc27b8",
+      "listing_type": "trade",
+      "condition": "new",
+      "trade_for": "66e1e021d69a9c598dfc62bd",
+      "description": "Looking to trade this new game for Hollow Knight."
+    },
+    {
+      "game": "66e1e020d69a9c598dfc477f",
+      "user": "66e1e01fd69a9c598dfc27c7",
+      "listing_type": "trade",
+      "condition": "very good",
+      "trade_for": "66e1e022d69a9c598dfca294",
+      "description": "Trade this very good condition game for StarCraft II."
+    },
+    {
+      "game": "66e1e021d69a9c598dfc7908",
+      "user": "66e1e01fd69a9c598dfc27c6",
+      "listing_type": "trade",
+      "condition": "good",
+      "trade_for": "66e1df08652f1dfa0afbbb8c",
+      "description": "Offering this game in exchange for Need for Speed: Underground."
+    },
+    {
+      "game": "66e1e023d69a9c598dfcb7d3",
+      "user": "66e1e01fd69a9c598dfc27c2",
+      "listing_type": "trade",
+      "condition": "like new",
+      "trade_for": "66e1df09652f1dfa0afbfa45",
+      "description": "Trade my like new game for World of Warcraft."
+    },
+    {
+      "game": "66e1df09652f1dfa0afbecc3",
+      "user": "66e1e01fd69a9c598dfc27bc",
+      "listing_type": "trade",
+      "condition": "acceptable",
+      "trade_for": "66e1e021d69a9c598dfc779a",
+      "description": "Willing to trade my copy for Metal Gear Solid."
+    }
+  ]
+  
