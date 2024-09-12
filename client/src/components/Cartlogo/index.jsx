@@ -1,5 +1,5 @@
 // src/components/CartLogo.js
-import React from 'react';
+
 import './CartLogo.css'; // Import CSS for styling
 
 const CartLogo = () => {
