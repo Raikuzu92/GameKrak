@@ -88,7 +88,7 @@
     color: #ffcc00;
     font-weight: bold;
     text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.8);
-    font-size: 1rem;
+    font-size: 0.5rem;
     /* Font size for the title */
     margin-bottom: 0.5rem;
     white-space: nowrap;
@@ -188,3 +188,37 @@
     border-radius: 6px;
     border: 2px solid black;
 }
+
+.game-card {
+    width: 396px; /* Fixed width for the card */
+    height: 416px; /* Fixed height for the card */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden; /* Hide any overflow content */
+  }
+  
+  .game-card .card-img-container {
+    width: 100%; /* Ensure the container is the full width of the card */
+    height: 200px; /* Fixed height for the image container */
+    display: flex;
+    align-items: center; /* Center the image vertically */
+    justify-content: center; /* Center the image horizontally */
+    overflow: hidden; /* Hide any overflow content */
+  }
+  
+  .game-card img {
+    max-width: 100%; /* Make sure the image scales down to fit the container width */
+    max-height: 100%; /* Ensure the image scales down to fit the container height */
+    object-fit: cover; /* Scale the image while preserving its aspect ratio */
+  }
+  
+  .game-title {
+    font-size: 0.5rem; /* Optional: Adjust font size */
+  }
+  
+  .game-console, .game-release-date, .game-publisher {
+    font-size: 1rem; /* Optional: Adjust font size */
+  }
+  
