@@ -1,8 +1,7 @@
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import React from "react";
-import {ApolloProvider} from "@apollo/client";
-import { BrowserRouter } from "react-router-dom";
+
+
 
 
 import App from "./App.jsx";
@@ -13,8 +12,7 @@ import Market from "./pages/Market.jsx";
 import Profile from "./pages/Profile";
 import ErrorPage from "./pages/ErrorPage";
 import SplashPage from "./pages/SplashPage.jsx";
-import Cart from "./pages/Cart.jsx";
-import Checkout from "./pages/Checkout.jsx";
+// import Checkout from "./pages/Checkout.jsx";
 import Search from "./pages/Search.jsx";
 import ListingForm from './pages/ListingForm.jsx';
 
@@ -57,10 +55,10 @@ const router = createBrowserRouter([
       //   path: "/market/cart",
       //   element: <Cart />,
       // },
-      {
-        path: "/market/checkout",
-        element: <Checkout />,
-      },
+      // {
+      //   path: "/market/checkout",
+      //   element: <Checkout />,
+      // },
       {
         path: "/games",
         element: <Game />,

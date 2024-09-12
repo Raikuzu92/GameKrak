@@ -68,7 +68,7 @@ const Login = () => {
             )}
 
             <p className="signup-link pt-2" style={{ color: "white" }}>
-              Don't have an account? <Link className="glitch-text" style={{ fontSize: "medium" }} to="/signup">Sign up</Link>
+              Dont have an account? <Link className="glitch-text" style={{ fontSize: "medium" }} to="/signup">Sign up</Link>
             </p>
           </div>
         </div>

@@ -1,6 +1,6 @@
  import { Navigate, useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
-import { QUERY_USER, QUERY_ME, QUERY_GAMES } from "../utils/queries";
+import { QUERY_USER, } from "../utils/queries";
 import Auth from "../utils/auth";
 // import GameForm from "../components/GameForm"; 
 //  import GameList from "../components/GameList"; 
@@ -26,29 +26,29 @@ console.log(userParam)
   }
 
   // Handle loading states for both queries
-  if (userLoading || gamesLoading) {
+  if (loading) {
     return (
       <div className="loading-container">
-        {userLoading ? "Loading user data..." : "Loading games data..."}
+        {loading ? "Loading user data..." : "Loading games data..."}
       </div>
     );
   }
 
   // Check if user data was found
-  if (!user) {
-    return (
-      <div className="error-message">
-        <h4>
-          You need to be logged in to see this page. Please log in or sign up!
-        </h4>
-      </div>
-    );
-  }
+  // if (!user) {
+  //   return (
+  //     <div className="error-message">
+  //       <h4>
+  //         You need to be logged in to see this page. Please log in or sign up!
+  //       </h4>
+  //     </div>
+  //   );
+  // }
 
   return (
     <div className="profile-container">
       <div className="flex-row justify-center mb-3">
-        <h2 className="col-12 col-md-10 bg-dark text-light p-3 mb-5">
+        {/* <h2 className="col-12 col-md-10 bg-dark text-light p-3 mb-5">
           Viewing {userParam ? `${user.username}'s` : "your"} profile.
         </h2>
 
@@ -58,13 +58,12 @@ console.log(userParam)
           ) : (
             <h4>No games to display</h4>
           )}
-        </div>
+        </div> */}
 
         <div
           className="col-12 col-md-10 mb-3 p-3"
           style={{ border: "1px dotted #1a1a1a" }}
         >
-          <GameForm />
         </div>
       </div>
     </div>
