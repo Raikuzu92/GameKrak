@@ -34,7 +34,7 @@ const Header = () => {
                     className="custom-dropdown" // Customize dropdown arrow in css
                     menuVariant="dark"  // Dark background for the dropdown
                   >
-                    <NavDropdown.Item as={Link} to="/games/all" className="text-white">View All Games</NavDropdown.Item>
+                    <NavDropdown.Item as={Link} to="/games" className="text-white">View All Games</NavDropdown.Item>
                     <NavDropdown.Item as={Link} to="/search" className="text-white">Browse by Title</NavDropdown.Item>
                   </NavDropdown>
                 </ButtonGroup>

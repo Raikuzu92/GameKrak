@@ -1,14 +1,88 @@
-/* SearchPage.css */
+/* Search.css */
 
-.search-page {
-    padding: 20px;
+/* Container styling */
+.search-container {
+  background-color: #000000; /* Dark background color for the container */
+  color: #f1f1f1; /* Light text color for contrast */
+  min-height: 100vh; /* Ensure it covers the full viewport height */
+}
+
+/* Form styling */
+.search-bar {
+  display: flex;
+  justify-content: center;
+}
+
+.search-input {
+  background-color: #000000; /* Dark background for the input */
+  color: #ffffff; /* White text color */
+  border: 1px solid #ffffff; /* Border color */
+  border-radius: 4px; /* Rounded corners */
+  padding: 10px;
+  margin-right: 10px; /* Space between input and button */
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.search-input:focus {
+  background-color: #000000; /* Slightly lighter background on focus */
+  border-color: #ffffff; /* Border color on focus */
+  color: #ffffff; /* Text color on focus */
+}
+
+/* Card styling */
+.game-card {
+  background-color: #2b2a2a; /* Dark background for the card */
+  border: 1px solid #444; /* Border color */
+  border-radius: 8px; /* Rounded corners */
+  color: #bdbdbd; /* Light text color */
+  overflow: hidden; /* Ensure content stays within borders */
+  display: flex; /* Flexbox for layout */
+  flex-direction: column; /* Stack image and content vertically */
+  margin-bottom: 20px; /* Space below the card */
+}
+
+/* Image styling */
+.game-card .card-img-top {
+  width: 100%; /* Full width of the card */
+  object-fit: cover; /* Ensure image covers the area */
+  border-bottom: 1px solid #444; /* Border below the image */
+}
+
+/* Content styling */
+.card-body {
+  padding: 15px; /* Padding around the content */
+  display: flex; /* Flexbox for layout */
+  flex-direction: column; /* Stack text items vertically */
+}
+
+/* Title styling */
+.game-title {
+  font-size: 1.5rem; /* Larger font size */
+  color: #ffffff; /* Primary color for title */
+  margin-bottom: 10px; /* Space below the title */
+}
+
+/* Subtitle and text styling */
+.game-console, .game-genre, .game-publisher, .game-developer, .game-release-date {
+  color: #00ff00; /* Glitch text color */
+  margin-bottom: 5px; /* Space between text items */
+  font-size: 1rem; /* Set a standard font size for details */
+}
+
+@media (max-width: 768px) {
+  .game-card .card-img-top {
+    height: auto; /* Adjust image height on smaller screens */
   }
-  
-  .search-form {
-    margin-bottom: 20px;
+}
+
+
+@media (max-width: 768px) {
+  .search-input, button {
+    width: 100%; /* Make input and button full width on smaller screens */
+    margin: 5px 0; /* Adjust margins */
   }
-  
-  .search-form .form-control {
-    margin-bottom: 10px;
-  }
-  
+}
+
+.image-container {
+  height: 1000px;
+}
