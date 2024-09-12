@@ -1,25 +1,24 @@
-import { Navigate, useParams } from "react-router-dom";
+ import { Navigate, useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import { QUERY_USER, QUERY_ME, QUERY_GAMES } from "../utils/queries";
 import Auth from "../utils/auth";
-// import GameForm from "../components/GameForm"; Game Form to add games
-// import GameList from "../components/GameList"; Game List to display games
+// import GameForm from "../components/GameForm"; 
+//  import GameList from "../components/GameList"; 
 
 const Profile = () => {
   const { username: userParam } = useParams();
-
+console.log(userParam)
   // Determine which query to run based on whether we have a username in params
-  const { loading: userLoading, data: userData } = useQuery(
-    userParam ? QUERY_USER : QUERY_ME,
+  const { loading, data} = useQuery(QUERY_USER,
     { variables: { username: userParam } }
   );
-  
+  console.log(data);
   // Query for games
-  const { loading: gamesLoading, data: gameData } = useQuery(QUERY_GAMES);
-
+  // const { loading: gamesLoading, data: gameData } = useQuery(QUERY_GAMES);
+  // console.log(data);
   // Retrieve the correct user and games data
-  const user = userData?.me || userData?.user || null;
-  const games = gameData?.games || [];
+  // const user = userData?.me || userData?.user || null;
+  // const games = gameData?.games || [];
 
   // Redirect the user to their own profile if they're viewing their own page
   if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {

@@ -27,8 +27,10 @@ class AuthService {
     return localStorage.getItem('id_token');
   }
 
-  login(idToken) {
-    localStorage.setItem('id_token', idToken);
+  login(data) {
+    console.log(data);
+    localStorage.setItem('id_token', data.token);
+    localStorage.setItem('user', JSON.stringify(data.user));
     window.location.assign('/market');
   }
 
