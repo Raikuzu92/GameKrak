@@ -16,16 +16,16 @@ const GameList = ({ games }) => {
 
         return (
           <Col key={game._id} xs={12} md={6} lg={4}>
-            <Link to={`/games/${game.id}`}>
+            <Link to={`/games/${game._id}`}>
               <Card className={`game-card ${gameClassName}`}>
                 <Card.Img variant="top" src={`https://www.vgchartz.com${game.img}`} alt={game.title} />
                 <Card.Body>
                   <Card.Title className="game-title">{game.title}</Card.Title>
                   <Card.Subtitle className="game-console">{game.console}</Card.Subtitle>
                   <div>Released:</div>
-                  <div className="pb-2">{game.release_date}</div>
+                  <div className="pb-2 game-release-date">{game.release_date}</div>
                   <div>Publisher:</div>
-                  <div className="pb-3">{game.publisher}</div>
+                  <div className="pb-3 game-publisher">{game.publisher}</div>
                 </Card.Body>
               </Card>
             </Link>

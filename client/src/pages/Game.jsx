@@ -3,10 +3,11 @@ import { useQuery } from '@apollo/client';
 import GameList from '../components/GameList';
 import GameSingle from '../components/GameSingle';
 import { QUERY_GAMES } from '../utils/queries';
+import { DropdownButton, Dropdown, Button } from 'react-bootstrap';
 import './Game.css';
 
 const Game = () => {
-  const [limit, setLimit] = useState(10);
+  const [limit, setLimit] = useState(6);
 
   const { loading: loadingGames, data: gamesData } = useQuery(QUERY_GAMES, {
     variables: { limit: limit },
@@ -18,12 +19,16 @@ const Game = () => {
     setLimit(prevLimit => prevLimit + 6);
   };
 
+  const filterLimit = (value) => {
+    setLimit(value);
+  };
+
   return (
     <main>
       <div className="container d-flex justify-content-center flex-wrap">
-        <div className="col-12 col-md-8 mb-3">
+        <div className="">
           {loadingGames ? (
-            <div>Loading...</div>
+            <div className='text-white'>Loading...</div>
           ) : (
             <>
               <div className="scrollable-container">
@@ -32,11 +37,18 @@ const Game = () => {
 
               {/* Load more button */}
               <div className="load-more-container">
-                {limit < games.length && (
-                  <button onClick={increaseLimit} className="load-more-btn">
+                <div className='px-3'>
+                  <Button onClick={increaseLimit} className="load-more-btn">
                     Load more
-                  </button>
-                )}
+                  </Button>
+                </div>
+                <div className='px-3'>
+                  <DropdownButton id="dropdown-basic-button" title="Filter" menuVariant="dark">
+                    <Dropdown.Item onClick={() => filterLimit(24)}>24</Dropdown.Item>
+                    <Dropdown.Item onClick={() => filterLimit(60)}>60</Dropdown.Item>
+                    <Dropdown.Item onClick={() => filterLimit(120)}>120</Dropdown.Item>
+                  </DropdownButton>
+                </div>
               </div>
             </>
           )}

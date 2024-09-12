@@ -22,7 +22,7 @@ const Header = () => {
           <header className='retro-header pt-5 pb-4 px-5'>
             <div className='flex-row justify-space-between-lg justify-center align-center'>
               <nav className="nav-links d-flex align-items-center flex-grow-1">
-                <Link className="nav-item text-white" to="/profile/me" style={{ fontSize: "medium" }}>
+                <Link className="nav-item text-white" to="/profile/me" style={{ fontSize: "0.95rem" }}>
                   Profile
                 </Link>
 
@@ -76,6 +76,16 @@ const Header = () => {
         </>
       ) : (
         <>
+          <header className='retro-header pt-5 pb-4 px-5'>
+            <div className='flex-row justify-space-between-lg justify-center align-center'>
+              <div className="title-container text-center flex-grow-1">
+                <Link className='glitch-text' to='/login'>
+
+                  GameKrak
+                </Link>
+              </div>
+            </div>
+          </header>
         </>
       )}
     </div>

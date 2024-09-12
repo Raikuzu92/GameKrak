@@ -153,6 +153,7 @@ export const QUERY_BUY_LISTINGS = gql`
       game {
         _id
         title
+        img
       }
     }
   }
@@ -174,6 +175,7 @@ export const QUERY_SELL_LISTINGS = gql`
       game {
         _id
         title
+        img
       }
     }
   }
@@ -190,6 +192,7 @@ export const QUERY_TRADE_LISTINGS = gql`
       trade_for {
         _id
         title
+        img
       }
       user {
         _id
@@ -198,6 +201,7 @@ export const QUERY_TRADE_LISTINGS = gql`
       game {
         _id
         title
+        img
       }
     }
   }
