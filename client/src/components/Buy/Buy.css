@@ -46,19 +46,20 @@
 
   #buy-listing-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: 1fr; /* Ensure each card takes up one full row */
     gap: 20px;
   }
   
   .buy-card {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     background-color: #1a1a1a;
     border: 1px solid #3399ff;
     border-radius: 12px;
     padding: 20px;
     align-items: center;
-  }
+  }  
   
   .buy-left,
   .buy-right {

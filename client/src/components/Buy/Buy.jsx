@@ -35,8 +35,9 @@ const Buy = () => {
             <div className='buy-right'>
               <h4 className='buy-card-header'><strong>{listing.game?.title}</strong></h4>
               <h5>Price: ${listing.price}</h5>
-              <p>{listing.description}</p>
+              <p>Note: {listing.description}</p>
               <p>Condition: {listing.condition}</p>
+              <p>Console: {listing.game.console}</p>
               <p>Seller: {listing.user.username}</p>
             </div>
           </div>

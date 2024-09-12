@@ -36,6 +36,7 @@ const Trade = () => {
                 <div className="mt-3"> Game Owned: </div>
                 <h4><strong>{listing.game?.title}</strong></h4>
                 <p className="mt-2">Condition: {listing.condition}</p>
+                <p className="mt-2">Console: {listing.game.console}</p>
                 <p>Owner: {listing.user.username}</p>
               </div>
             </div>
