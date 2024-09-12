@@ -1,103 +1,58 @@
-/* Importing the retro "Press Start 2P" font */
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-
-/* Main container for the signup page */
-.signup-container {
-  height: 100vh;
-  background-color: #1a1a1a; /* Dark background to match the theme */
-  font-family: 'Press Start 2P', cursive;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* Container */
+.search-container {
+  background-color: #101010;
+  color: #ffffff;
+  min-height: 100vh;
 }
 
-/* Card styling for the form */
-.signup-card {
-    /* Existing code */
-
-    /* Glitch animation for the border */
-    animation: glitch-border 1.5s infinite;
+/* Search bar styling */
+.search-input {
+  background-color: #202020;
+  color: #ffffff;
+  padding: 10px;
+  border: 1px solid #fff;
 }
 
-@keyframes glitch-border {
-    0% {
-        box-shadow: 0 0 20px red
-    }
-    20% {
-        box-shadow: 0 0 20px pink
-    }
-    40% {
-        box-shadow: 0 0 20px aqua
-    }
-    60% {
-        box-shadow: 0 0 20px orange
-    }
-    80% {
-        box-shadow: 0 0 20px rgb(102, 255, 0)
-    }
-    100% {
-        box-shadow: 0 0 20px red
-    }
+.search-input:focus {
+  background-color: #303030;
+  border-color: #4750ff;
+  outline: none;
 }
 
-/* Glitch animation */
-@keyframes glitch {
-  0% {
-    text-shadow: 2px 2px 0px #ff0000, -2px -2px 0px #00ff00;
-  }
-  20% {
-    text-shadow: -2px -2px 0px #ff00ff, 2px 2px 0px #00ffff;
-  }
-  40% {
-    text-shadow: 2px -2px 0px #ff0000, -2px 2px 0px #00ff00;
-  }
-  60% {
-    text-shadow: -2px 2px 0px #ff00ff, 2px -2px 0px #00ffff;
-  }
-  80% {
-    text-shadow: 2px 2px 0px #ff0000, -2px -2px 0px #00ff00;
-  }
-  100% {
-    text-shadow: -2px -2px 0px #ff00ff, 2px 2px 0px #00ffff;
-  }
+button {
+  background-color: #4750ff;
+  color: #ffffff;
+  padding: 10px;
+  border: none;
 }
 
-.btn {
-    background-color: white; 
-    color: black; 
-    padding: 10px 20px; /* Add some padding to the button */
-    border: none; /* Remove the border */
-    border-radius: 5px; /* Add some border radius */
-    font-size: 16px; /* Set the font size */
-    cursor: pointer; /* Change the cursor to a pointer on hover */
-    transition: background-color 0.3s ease; /* Add a smooth transition effect */
+button:hover {
+  background-color: #3b42d6;
 }
 
-.btn:hover {
-    background-color: #ff99ff; /* Change the background color on hover */
+
+/* Card styles */
+.game-card {
+  background-color: #2b2a2a;
+  color: #bdbdbd;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
-@media (max-width: 768px) {
-    .signup-container {
-        flex-direction: column;
-        justify-content: flex-start;
-        padding: 20px;
-    }
-
-    .signup-card {
-        width: 100%;
-        max-width: 400px;
-        margin-bottom: 20px;
-    }
+.game-image {
+width: 100px ;
+height: 100px;
+  object-fit: cover; /* Ensures the image covers the entire container */
 }
 
-.signup-card {
-    padding: 40px; /* Adjust this value to change padding */
-    margin-top: 20px;
-    margin-bottom: 20px;
-    background-color: #000;
-    border-radius: 12px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
-    animation: glitch-border 1.5s infinite;
-  }
-  
+/* Typography styling */
+h4, p {
+  color: #ffffff;
+}
+
+/* Alert message */
+.alert {
+  background-color: #202020;
+  color: #ff5c5c;
+}
+
