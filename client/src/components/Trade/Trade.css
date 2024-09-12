@@ -31,7 +31,7 @@
   
   #trade-listing-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: 1fr; /* Ensure each card takes up one full row */
     gap: 20px;
   }
   

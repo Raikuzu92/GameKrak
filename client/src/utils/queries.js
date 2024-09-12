@@ -153,7 +153,8 @@ export const QUERY_BUY_LISTINGS = gql`
       game {
         _id
         img
-        title        
+        title
+        console       
       }
     }
   }
@@ -176,6 +177,7 @@ export const QUERY_SELL_LISTINGS = gql`
         _id
         title
         img
+        console
       }
     }
   }
@@ -202,6 +204,7 @@ export const QUERY_TRADE_LISTINGS = gql`
         _id
         title
         img
+        console
       }
     }
   }

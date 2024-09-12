@@ -19,7 +19,7 @@
   border: 3px solid #ffffff; /* Neon border */
   color: #ffffff; /* Neon text */
   background-color: transparent;
-  font-family: 'Press Start 2P', cursive; /* Retro game font */
+  font-family: 'Press Start 2P', 'JetBrains Mono', monospace; /* Retro game font */
   text-transform: uppercase;
   transition: all 0.3s ease;
   border-radius: 8px;
@@ -45,5 +45,5 @@
   border-radius: 8px;
   background-color: #000000; /* Darker content area */
   color: #ffffff;
-  font-family: 'jetbrains mono', cursive; /* Retro font for content too */
+  font-family: 'JetBrains Mono', monospace; /* Retro font for content too */
 }

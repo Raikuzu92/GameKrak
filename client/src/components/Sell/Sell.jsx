@@ -35,8 +35,9 @@ const Sell = () => {
             <div className='sell-right'>
               <h2 className='sell-card-header'><strong>{listing.game?.title}</strong></h2>
               <h5 className="pt-3">Price: ${listing.price}</h5>
-              <p>{listing.description}</p>
+              <p>Note: {listing.description}</p>
               <p>Condition: {listing.condition}</p>
+              <p>Console: {listing.game.console}</p>
               <p>Seller: {listing.user.username}</p>
             </div>
           </div>
