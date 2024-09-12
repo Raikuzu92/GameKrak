@@ -12,7 +12,7 @@ import { Outlet } from 'react-router-dom';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
-import CartLogo from './components/CartLogo'; // Import the CartLogo component
+// import CartLogo from './components/CartLogo'; // Import the CartLogo component
 
 
 // Construct our main GraphQL API endpoint
