@@ -1,4 +1,4 @@
-import './CoinSlot.css'; 
+import './Coinslot.css'; 
 
 const CoinSlot = () => {
 
