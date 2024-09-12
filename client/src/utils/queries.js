@@ -152,8 +152,8 @@ export const QUERY_BUY_LISTINGS = gql`
       }
       game {
         _id
-        title
         img
+        title        
       }
     }
   }
