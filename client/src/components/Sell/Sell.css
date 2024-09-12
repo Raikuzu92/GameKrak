@@ -1,0 +1,90 @@
+#sell-page {
+    background-color: #000000;
+    padding: 40px;
+    min-height: 100vh;
+  }
+  
+  #sell-heading {
+    font-size: 2.5rem;
+    font-family: 'Press Start 2P', cursive;
+    color: #ffffff;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+    animation: glitch-pink 5s infinite;
+  }
+  
+  @keyframes glitch-pink {
+    0% {
+      text-shadow: 2px 2px 0px #ff66b2, -2px -2px 0px #ff3399;
+    }
+    20% {
+      text-shadow: -2px -2px 0px #ff66b2, 2px 2px 0px #ff99cc;
+    }
+    40% {
+      text-shadow: 2px -2px 0px #ff66b2, -2px 2px 0px #ff3399;
+    }
+    60% {
+      text-shadow: -2px 2px 0px #ff66b2, 2px -2px 0px #ffccdd;
+    }
+    80% {
+      text-shadow: 2px 2px 0px #ff66b2, -2px -2px 0px #ff66b2;
+    }
+    100% {
+      text-shadow: -2px -2px 0px #ff66b2, 2px 2px 0px #ff99cc;
+    }
+  }
+  
+  #sell-listing-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  .sell-card {
+    display: flex;
+    justify-content: space-between;
+    background-color: #1a1a1a;
+    border: 1px solid #ff66b2;
+    border-radius: 12px;
+    padding: 20px;
+    align-items: center;
+  }
+  
+  .sell-left,
+  .sell-right {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .sell-left {
+    flex-basis: 40%;
+    display: flex;
+    align-items: center;
+  }
+  
+  .sell-game-img {
+    width: 250px;
+    height: auto;
+    object-fit: cover;
+    margin-right: 20px;
+  }
+  
+  .sell-right {
+    flex-basis: 50%;
+    text-align: left;
+  }
+  
+  .sell-card-header {
+    margin: 0;
+    color: #ff66b2;
+  }
+  
+  .sell-right h5 {
+    color: #ff66b2;
+  }
+  
+  .sell-right p {
+    color: #ffffff;
+  }
