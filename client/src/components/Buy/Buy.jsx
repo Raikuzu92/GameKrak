@@ -1,14 +1,14 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
-import { QUERY_GAMES } from '../../utils/queries'; // Assuming you have a query to fetch games
+import { QUERY_LISTINGS } from '../../utils/queries'; // Assuming you have a query to fetch games
 
 const Buy = () => {
-  const { loading, data, error } = useQuery(QUERY_GAMES); // Replace QUERY_GAMES with the correct query to fetch items
-  const games = data?.games || [];
+  const { loading, data, error } = useQuery(QUERY_LISTINGS); // Replace QUERY_GAMES with the correct query to fetch items
+  const listings = data?.listings || [];
 
   // Handle loading state
   if (loading) {
-    return <div>Loading games...</div>;
+    return <div>Loading listings...</div>;
   }
 
   // Handle error state
@@ -17,7 +17,7 @@ const Buy = () => {
   }
 
   // Handle empty data
-  if (!games.length) {
+  if (!listings.length) {
     return <div>No games available for purchase at the moment.</div>;
   }
 
@@ -25,12 +25,15 @@ const Buy = () => {
     <div>
       <h2>Buy Games</h2>
       <div>
-        {games.map((game) => (
-          <div key={game._id} className='card mb-3'>
-            <h4 className='card-header bg-dark text-light p-2 m-0'>{game.name}</h4>
+        {listings.map((listing) => (
+          <div key={listing._id} className='card mb-3'>
+            <h4 className='card-header bg-dark text-light p-2 m-0'>{listing.game.title}</h4>
             <div className='card-body bg-light p-2'>
-              <h5>Price: ${game.price}</h5>
-              <p>{game.description}</p>
+              <h5>Price: ${listing.price}</h5>
+              <p>{listing.description}</p>
+              <p>{listing.listing_type}</p>
+              <p>{listing.condition}</p>
+              <p>{listing.user.username}</p>
             </div>
           </div>
         ))}
