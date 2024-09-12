@@ -1,0 +1,127 @@
+[
+    {
+      "game": "The Legend of Zelda: Ocarina of Time",
+      "user": "66e1e01fd69a9c598dfc27af",  // GameLover42
+      "listing_type": "buy",
+      "price": 50,
+      "condition": "new",
+      "description": "Looking to buy a mint condition copy of this classic game."
+    },
+    {
+      "game": "Final Fantasy VII",
+      "user": "66e1e01fd69a9c598dfc27b0",  // PixelMaster
+      "listing_type": "buy",
+      "price": 30,
+      "condition": "very good",
+      "description": "Seeking a gently used version of this game."
+    },
+    {
+      "game": "Street Fighter II",
+      "user": "66e1e01fd69a9c598dfc27b1",  // RetroGamer88
+      "listing_type": "buy",
+      "price": 40,
+      "condition": "good",
+      "description": "In the market for a well-loved copy of this title."
+    },
+    {
+      "game": "The Legend of Zelda: Breath of the Wild",
+      "user": "66e1e01fd69a9c598dfc27b2",  // ZeldaFanatic
+      "listing_type": "buy",
+      "price": 60,
+      "condition": "like new",
+      "description": "Willing to pay top dollar for a near-mint copy."
+    },
+    {
+      "game": "Super Mario 64",
+      "user": "66e1e01fd69a9c598dfc27b3",  // MarioMaster
+      "listing_type": "buy",
+      "price": 25,
+      "condition": "acceptable",
+      "description": "Looking for a playable copy, condition not critical."
+    },
+    
+    // Sell Listings
+    {
+      "game": "Super Mario Bros.",
+      "user": "66e1e01fd69a9c598dfc27c3",  // RetroCollector
+      "listing_type": "sell",
+      "price": 55,
+      "condition": "new",
+      "description": "Selling a brand-new, sealed copy of this game."
+    },
+    {
+      "game": "Sonic the Hedgehog",
+      "user": "66e1e01fd69a9c598dfc27b4",  // SonicSpeedster
+      "listing_type": "sell",
+      "price": 35,
+      "condition": "very good",
+      "description": "Gently used copy available for sale."
+    },
+    {
+      "game": "Chrono Trigger",
+      "user": "66e1e01fd69a9c598dfc27b5",  // RPGking
+      "listing_type": "sell",
+      "price": 45,
+      "condition": "good",
+      "description": "Selling a well-maintained copy."
+    },
+    {
+      "game": "Call of Duty: Modern Warfare",
+      "user": "66e1e01fd69a9c598dfc27b6",  // FPSpro
+      "listing_type": "sell",
+      "price": 65,
+      "condition": "like new",
+      "description": "Like new condition, barely played."
+    },
+    {
+      "game": "Pac-Man",
+      "user": "66e1e01fd69a9c598dfc27bb",  // ArcadeAddict
+      "listing_type": "sell",
+      "price": 20,
+      "condition": "acceptable",
+      "description": "Selling a well-worn copy, price negotiable."
+    },
+    
+    // Trade Listings
+    {
+      "game": "Super Meat Boy",
+      "user": "66e1e01fd69a9c598dfc27b8",  // PlatformerPro
+      "listing_type": "trade",
+      "condition": "new",
+      "trade_for": "Hollow Knight",
+      "description": "Looking to trade this new game for Hollow Knight."
+    },
+    {
+      "game": "Diablo II",
+      "user": "66e1e01fd69a9c598dfc27c7",  // DungeonCrawler
+      "listing_type": "trade",
+      "condition": "very good",
+      "trade_for": "StarCraft II",
+      "description": "Trade this very good condition game for StarCraft II."
+    },
+    {
+      "game": "Minecraft",
+      "user": "66e1e01fd69a9c598dfc27c6",  // SandboxMaster
+      "listing_type": "trade",
+      "condition": "good",
+      "trade_for": "Need for Speed: Underground",
+      "description": "Offering this game in exchange for Need for Speed: Underground."
+    },
+    {
+      "game": "Uncharted 4: A Thief's End",
+      "user": "66e1e01fd69a9c598dfc27c2",  // AdventureTime
+      "listing_type": "trade",
+      "condition": "like new",
+      "trade_for": "World of Warcraft",
+      "description": "Trade my like new game for World of Warcraft."
+    },
+    {
+      "game": "The Witcher 3: Wild Hunt",
+      "user": "66e1e01fd69a9c598dfc27bc",  // FantasyHero
+      "listing_type": "trade",
+      "condition": "acceptable",
+      "trade_for": "Metal Gear Solid",
+      "description": "Willing to trade my copy for Metal Gear Solid."
+    }
+  ]
+  

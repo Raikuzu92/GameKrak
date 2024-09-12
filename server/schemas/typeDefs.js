@@ -69,7 +69,7 @@ type Transaction {
     users: [User]
     user(username: String!): User
     me: User
-    listings: [Listing]
+    listings(listing_type: String): [Listing]
     listingsByUser(username: String!): [Listing]
     transactionsByUser(username: String!): [Transaction]
     transactions: [Listing]

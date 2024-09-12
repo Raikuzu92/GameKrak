@@ -1,0 +1,325 @@
+[{
+  "_id": {
+    "$oid": "66e1e01fd69a9c598dfc27b2"
+  },
+  "username": "ZeldaFanatic",
+  "email": "zeldafanatic@example.com",
+  "password": "$2b$10$ddttAqSCWdj7B7a0dcCQWOEXbOZnZud3Fx3KXAKJwcQBgFP8xTC4i",
+  "bio": "If it's Zelda, I love it.",
+  "favorite_game": "The Legend of Zelda: Breath of the Wild",
+  "listings": [],
+  "transactions": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66e1e01fd69a9c598dfc27b9"
+  },
+  "username": "StrategyGuru",
+  "email": "strategyguru@example.com",
+  "password": "$2b$10$b0R3bBPAs/ipAlgkVrCVxu5rU0Ep0qP7V4xwTNwsgmi/1rLFIRP9S",
+  "bio": "Mastermind behind every strategy game.",
+  "favorite_game": "Age of Empires II",
+  "listings": [],
+  "transactions": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66e1e01fd69a9c598dfc27b7"
+  },
+  "username": "PuzzleGeek",
+  "email": "puzzlegeek@example.com",
+  "password": "$2b$10$mnfwwkR8VOq2LV9NIo9e0e/IbeWplb2KKz8Ivfu9/BxQex3U3Rzbq",
+  "bio": "I love games that challenge the mind.",
+  "favorite_game": "Tetris",
+  "listings": [],
+  "transactions": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66e1e01fd69a9c598dfc27b8"
+  },
+  "username": "FightingGameChamp",
+  "email": "fightingchamp@example.com",
+  "password": "$2b$10$r1Wh1h8p9QWp/vn5P6WU6./4i/3po2AVsgHp571NxfHM/mZ9Acfy2",
+  "bio": "Competitive fighting games are my arena.",
+  "favorite_game": "Mortal Kombat",
+  "listings": [],
+  "transactions": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66e1e01fd69a9c598dfc27ba"
+  },
+  "username": "PlatformerPro",
+  "email": "platformerpro@example.com",
+  "password": "$2b$10$.poUzjHDwihqIWZdkaBsQ.qjB3pKCr9.FxoXUFCjRdqM1H/DndhK.",
+  "bio": "Platformers are the ultimate test of skill.",
+  "favorite_game": "Super Meat Boy",
+  "listings": [],
+  "transactions": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66e1e01fd69a9c598dfc27bc"
+  },
+  "username": "SportsFreak",
+  "email": "sportsfreak@example.com",
+  "password": "$2b$10$hl3s.0k7t4qp92Sr1O8Gc.8ZpzEN54/Sr3r5/aDkjiGAMY5BJLJpa",
+  "bio": "If it's a sports game, I've played it.",
+  "favorite_game": "FIFA 18",
+  "listings": [],
+  "transactions": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66e1e01fd69a9c598dfc27bb"
+  },
+  "username": "ArcadeAddict",
+  "email": "arcadeaddict@example.com",
+  "password": "$2b$10$RcbGKNDgwODe99UjjSg2JebmmpbnCkTGV.r5D9U.JADg/MxxYBG4m",
+  "bio": "Arcade halls are my second home.",
+  "favorite_game": "Pac-Man",
+  "listings": [],
+  "transactions": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66e1e01fd69a9c598dfc27be"
+  },
+  "username": "IndieGameLover",
+  "email": "indiegamelover@example.com",
+  "password": "$2b$10$gbuWTcemfrnPJccwzVwLtOClaZdoSn40njd5yQ/Kbc4641uhszRhy",
+  "bio": "Supporting indie games since day one.",
+  "favorite_game": "Hollow Knight",
+  "listings": [],
+  "transactions": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66e1e01fd69a9c598dfc27bd"
+  },
+  "username": "RacerLegend",
+  "email": "racerlegend@example.com",
+  "password": "$2b$10$ZbAEByyV6j7zDRZwotQeIO9VjRIZr6GofSRKXdiei5mSdKLJI1LTm",
+  "bio": "Racing games fuel my need for speed.",
+  "favorite_game": "Need for Speed: Underground",
+  "listings": [],
+  "transactions": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66e1e01fd69a9c598dfc27c1"
+  },
+  "username": "Survivalist",
+  "email": "survivalist@example.com",
+  "password": "$2b$10$OP/rBuKKFBymrL2/MJAxK.jwUzbKUVFpr3Z387mVCmd2BLMEt0IO.",
+  "bio": "Survival games keep me on edge.",
+  "favorite_game": "Minecraft",
+  "listings": [],
+  "transactions": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66e1e01fd69a9c598dfc27c0"
+  },
+  "username": "StealthExpert",
+  "email": "stealthexpert@example.com",
+  "password": "$2b$10$UaiXw3hpaXyFft5B160iT.7S7cYWg24O.0Oz0LeNPgZIGHRUCCDE2",
+  "bio": "Stealth games are all about patience and planning.",
+  "favorite_game": "Metal Gear Solid",
+  "listings": [],
+  "transactions": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66e1e01fd69a9c598dfc27bf"
+  },
+  "username": "MMORPGFanatic",
+  "email": "mmorpgfanatic@example.com",
+  "password": "$2b$10$RdBeD3osD/8InET5/FDCQuPJUDj2aRlKKSfdBhhga3ZrrIjOXdHlO",
+  "bio": "MMORPGs are where I lose myself.",
+  "favorite_game": "World of Warcraft",
+  "listings": [],
+  "transactions": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66e1e01fd69a9c598dfc27c2"
+  },
+  "username": "AdventureTime",
+  "email": "adventuretime@example.com",
+  "password": "$2b$10$tFNK.d.HgB5645TVW65KAe2rAG89sPq4MDzNLp4qNAbg61OAnM3Ge",
+  "bio": "Adventure games are my go-to genre.",
+  "favorite_game": "Uncharted 4: A Thief's End",
+  "listings": [],
+  "transactions": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66e1e01fd69a9c598dfc27b1"
+  },
+  "username": "RetroGamer88",
+  "email": "retrogamer88@example.com",
+  "password": "$2b$10$Q9oW4H5qTPnznq.ifiK6kemUDzk.c5AbUQtJzSW5dNVEZOwQBfK7W",
+  "bio": "Obsessed with retro consoles and arcade games.",
+  "favorite_game": "Street Fighter II",
+  "listings": [],
+  "transactions": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66e1e01fd69a9c598dfc27c4"
+  },
+  "username": "FantasyHero",
+  "email": "fantasyhero@example.com",
+  "password": "$2b$10$vUsX9MgFcQiMUfj9C5W/lOjV86vhBoEgy7Em3fnPqS3UZMCgelAnW",
+  "bio": "Fantasy RPGs are my escape from reality.",
+  "favorite_game": "The Witcher 3: Wild Hunt",
+  "listings": [],
+  "transactions": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66e1e01fd69a9c598dfc27c3"
+  },
+  "username": "RetroCollector",
+  "email": "retrocollector@example.com",
+  "password": "$2b$10$m6cZ3u2bgEjoJV.YTlZ1iOsqVP3LyXh17o7isLiwYfHqWnoPH6I2u",
+  "bio": "Collecting every retro game I can find.",
+  "favorite_game": "Super Mario Bros.",
+  "listings": [],
+  "transactions": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66e1e01fd69a9c598dfc27c6"
+  },
+  "username": "SandboxMaster",
+  "email": "sandboxmaster@example.com",
+  "password": "$2b$10$L04uaCaNpClCS1dhob5NqenfdZSk0Eiuz9qwciSqYg4ERKClstj8W",
+  "bio": "Building virtual worlds, one block at a time.",
+  "favorite_game": "Minecraft",
+  "listings": [],
+  "transactions": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66e1e01fd69a9c598dfc27c5"
+  },
+  "username": "SciFiStrategist",
+  "email": "scifistrategist@example.com",
+  "password": "$2b$10$WWcwnEfvxMyVuBR75G8zq.RdUGqWZlgo9ezPAO2j1V7I8CPQRGpFa",
+  "bio": "Sci-fi and strategy games go hand in hand.",
+  "favorite_game": "StarCraft II",
+  "listings": [],
+  "transactions": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66e1e01fd69a9c598dfc27c7"
+  },
+  "username": "DungeonCrawler",
+  "email": "dungeoncrawler@example.com",
+  "password": "$2b$10$j4t6A36E.isZYvcm7xD51epxM2uL0LPwsl/II3DGQiyVyi5T.zCB.",
+  "bio": "I live for dungeon crawlers and roguelikes.",
+  "favorite_game": "Diablo II",
+  "listings": [],
+  "transactions": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66e1e01fd69a9c598dfc27b6"
+  },
+  "username": "FPSpro",
+  "email": "fpspro@example.com",
+  "password": "$2b$10$lv.j4cey8UJ0dbYayQfHzOWdlxZjesB0EnarGMzGxGwqezUS0Gsx2",
+  "bio": "First-person shooters are where I excel.",
+  "favorite_game": "Call of Duty: Modern Warfare",
+  "listings": [],
+  "transactions": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66e1e01fd69a9c598dfc27b0"
+  },
+  "username": "PixelMaster",
+  "email": "pixelmaster@example.com",
+  "password": "$2b$10$93vjhQUOOlA1Nblt7UuVd.M68M.bWlM4Ds2sstTxPDKtSjZRVd9BS",
+  "bio": "Passionate about pixel art games and RPGs!",
+  "favorite_game": "Final Fantasy VII",
+  "listings": [],
+  "transactions": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66e1e01fd69a9c598dfc27b4"
+  },
+  "username": "SonicSpeedster",
+  "email": "sonicspeedster@example.com",
+  "password": "$2b$10$2FixZ4BFczfNyCk6EBR2rOvPpD.OLgZm0gJ2cIg8QVFSH2tVIdGT2",
+  "bio": "Sonic is the fastest thing alive!",
+  "favorite_game": "Sonic the Hedgehog",
+  "listings": [],
+  "transactions": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66e1e01fd69a9c598dfc27b5"
+  },
+  "username": "RPGking",
+  "email": "rpgking@example.com",
+  "password": "$2b$10$nUFaEnqOP6UTuwVy5XWFFuiwOcBRwcCwli/S/CZ18bPmBE7ygQsKy",
+  "bio": "Role-playing games are my life.",
+  "favorite_game": "Chrono Trigger",
+  "listings": [],
+  "transactions": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66e1e01fd69a9c598dfc27b3"
+  },
+  "username": "MarioMaster",
+  "email": "mariomaster@example.com",
+  "password": "$2b$10$/i5EqQPMJayWoZNyADn0tugAqwYuTJnQ7dEJ4EpXun5ak35ps3Goq",
+  "bio": "Mastering every Mario game since 1990.",
+  "favorite_game": "Super Mario 64",
+  "listings": [],
+  "transactions": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66e1e01fd69a9c598dfc27af"
+  },
+  "username": "GameLover42",
+  "email": "gamelover42@example.com",
+  "password": "$2b$10$hQ2lq5WBMwvn3yNZh9XXL.wepm/weFxT5UrIBa.BU6FahcJmqbkGe",
+  "bio": "A retro game enthusiast. I collect games from the 90s and early 2000s.",
+  "favorite_game": "The Legend of Zelda: Ocarina of Time",
+  "listings": [],
+  "transactions": [],
+  "__v": 0
+}]

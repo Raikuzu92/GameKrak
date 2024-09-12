@@ -1,9 +1,9 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
-import { QUERY_LISTINGS } from '../../utils/queries'; // Assuming you have a query to fetch games
+import { QUERY_BUY_LISTINGS } from '../../utils/queries'; // Import the new query
 
 const Buy = () => {
-  const { loading, data, error } = useQuery(QUERY_LISTINGS); // Replace QUERY_GAMES with the correct query to fetch items
+  const { loading, data, error } = useQuery(QUERY_BUY_LISTINGS); // Use the QUERY_BUY_LISTINGS
   const listings = data?.listings || [];
 
   // Handle loading state
@@ -13,7 +13,7 @@ const Buy = () => {
 
   // Handle error state
   if (error) {
-    return <div>Error loading games. Please try again later.</div>;
+    return <div>Error loading listings. Please try again later.</div>;
   }
 
   // Handle empty data
@@ -31,9 +31,8 @@ const Buy = () => {
             <div className='card-body bg-light p-2'>
               <h5>Price: ${listing.price}</h5>
               <p>{listing.description}</p>
-              <p>{listing.listing_type}</p>
-              <p>{listing.condition}</p>
-              <p>{listing.user.username}</p>
+              <p>Condition: {listing.condition}</p>
+              <p>Buyer: {listing.user.username}</p>
             </div>
           </div>
         ))}

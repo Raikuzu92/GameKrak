@@ -137,6 +137,72 @@ export const QUERY_SINGLE_LISTING = gql`
   }
 `;
 
+// Query to get all "buy" listings
+export const QUERY_BUY_LISTINGS = gql`
+  query getBuyListings {
+    listings(listing_type: "buy") {
+      _id
+      listing_type
+      price
+      condition
+      description
+      user {
+        _id
+        username
+      }
+      game {
+        _id
+        title
+      }
+    }
+  }
+`;
+
+// Query to get all "sell" listings
+export const QUERY_SELL_LISTINGS = gql`
+  query getSellListings {
+    listings(listing_type: "sell") {
+      _id
+      listing_type
+      price
+      condition
+      description
+      user {
+        _id
+        username
+      }
+      game {
+        _id
+        title
+      }
+    }
+  }
+`;
+
+// Query to get all "trade" listings
+export const QUERY_TRADE_LISTINGS = gql`
+  query getTradeListings {
+    listings(listing_type: "trade") {
+      _id
+      listing_type
+      condition
+      description
+      trade_for {
+        _id
+        title
+      }
+      user {
+        _id
+        username
+      }
+      game {
+        _id
+        title
+      }
+    }
+  }
+`;
+
 // Get all transactions
 export const QUERY_TRANSACTIONS = gql`
   query getTransactions {

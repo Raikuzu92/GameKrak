@@ -18,9 +18,10 @@ const resolvers = {
       }
       throw AuthenticationError;
     },
-    // get all listings
-    listings: async () => {
-      return Listing.find().populate("game").populate("user");
+    // get all listings / optional filter by listing_type
+    listings: async (parent, { listing_type }) => {
+      const filter = listing_type ? { listing_type } : {};
+      return Listing.find(filter).populate("game").populate("user").populate("trade_for");
     },
     // get all listings for one user
     listingsByUser: async (parent, { username }) => {

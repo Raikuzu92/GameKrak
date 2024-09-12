@@ -16,8 +16,8 @@ import SplashPage from "./pages/SplashPage.jsx";
 import Cart from "./pages/Cart.jsx";
 import Checkout from "./pages/Checkout.jsx";
 import Search from "./pages/Search.jsx";
+import ListingForm from './pages/ListingForm.jsx';
 
-import GameSingle from './components/GameSingle/index.jsx';
 
 const router = createBrowserRouter([
   {
@@ -46,16 +46,12 @@ const router = createBrowserRouter([
         element: <Profile />,
       },
       {
-        path: "/market/buy",
+        path: "/market",
         element: <Market />,
       },
       {
-        path: "/market/sell",
-        element: <Market />,
-      },
-      {
-        path: "/market/trade",
-        element: <Market />,
+        path: "/market/new",
+        element: <ListingForm />,
       },
       // {
       //   path: "/market/cart",
@@ -66,16 +62,12 @@ const router = createBrowserRouter([
         element: <Checkout />,
       },
       {
-        path: "/search",
-        element: <Search />,
-      },
-      {
         path: "/games",
         element: <Game />,
       },
       {
-        path: "/games/single",
-        element: <GameSingle games={Game} />,
+        path: "/games/search",
+        element: <Search />,
       },
     ],
   },
