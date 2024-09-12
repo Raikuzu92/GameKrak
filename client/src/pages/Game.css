@@ -2,7 +2,7 @@
 
 /* Style for the scrollable game list container */
 .scrollable-container {
-    max-height: 500px;
+    max-height: 900px;
     overflow-y: auto;
     padding: 1rem;
     display: grid;

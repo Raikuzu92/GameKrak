@@ -16,7 +16,7 @@ const SplashPage = () => {
 
   useEffect(() => {
     if (audioRef.current) {
-      audioRef.current.volume = 0.3; 
+      audioRef.current.volume = 0.1; 
       audioRef.current.play();
     }
   }, []);
