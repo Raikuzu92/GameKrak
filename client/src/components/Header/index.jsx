@@ -11,16 +11,18 @@ const Header = () => {
     console.log("Logged out");
   };
 
-  const tempLoggedIn = true;
+  // const tempLoggedIn = true;
 
   return (
     <div>
-      {tempLoggedIn ? (
+      {/* Uncomment once loggedIn logic is set */}
+      {/* {tempLoggedIn ? ( */}
+      {Auth.loggedIn() ? (
         <>
           <header className='retro-header pt-5 pb-4 px-5'>
             <div className='flex-row justify-space-between-lg justify-center align-center'>
               <nav className="nav-links d-flex align-items-center flex-grow-1">
-                <Link className="nav-item text-white" to="/profile" style={{ fontSize: "medium" }}>
+                <Link className="nav-item text-white" to="/profile/me" style={{ fontSize: "medium" }}>
                   Profile
                 </Link>
 
@@ -35,13 +37,13 @@ const Header = () => {
                     menuVariant="dark"  // Dark background for the dropdown
                   >
                     <NavDropdown.Item as={Link} to="/games" className="text-white">View All Games</NavDropdown.Item>
-                    <NavDropdown.Item as={Link} to="/search" className="text-white">Browse by Title</NavDropdown.Item>
+                    <NavDropdown.Item as={Link} to="/games/search" className="text-white">Browse by Title</NavDropdown.Item>
                   </NavDropdown>
                 </ButtonGroup>
 
                 {/* Marketplace Split Button */}
                 <ButtonGroup className="nav-item">
-                  <Link to="/market/buy" className="text-white pe-2">Market</Link>
+                  <Link to="/market" className="text-white pe-2">Market</Link>
                   <NavDropdown
                     as={ButtonGroup}
                     title=""
@@ -49,9 +51,8 @@ const Header = () => {
                     className="custom-dropdown"
                     menuVariant="dark"  // Dark background for the dropdown
                   >
-                    <NavDropdown.Item as={Link} to="/market/buy" className="text-white">Buy</NavDropdown.Item>
-                    <NavDropdown.Item as={Link} to="/market/sell" className="text-white">Sell</NavDropdown.Item>
-                    <NavDropdown.Item as={Link} to="/market/trade" className="text-white">Trade</NavDropdown.Item>
+                    <NavDropdown.Item as={Link} to="/market" className="text-white">Browse Listings</NavDropdown.Item>
+                    <NavDropdown.Item as={Link} to="/market/new" className="text-white">Add Listing</NavDropdown.Item>
                   </NavDropdown>
                 </ButtonGroup>
               </nav>
