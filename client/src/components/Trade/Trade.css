@@ -1,0 +1,86 @@
+#trade-page {
+    background-color: #000000;
+    padding: 40px;
+    min-height: 100vh;
+  }
+  
+  .centered-img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  #trade-heading {
+    font-size: 2.5rem;
+    font-family: 'Press Start 2P', cursive;
+    color: #ffffff;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+    animation: glitch-green 5s infinite;
+  }
+  
+  @keyframes glitch-green {
+    0% {
+      text-shadow: 2px 2px 0px #33cc33, -2px -2px 0px #00ff73;
+    }
+    100% {
+      text-shadow: -2px -2px 0px #33cc33, 2px 2px 0px #00ff55;
+    }
+  }
+  
+  #trade-listing-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  .trade-card {
+    display: flex;
+    justify-content: space-between;
+    background-color: #1a1a1a;
+    border: 1px solid #33cc33;
+    border-radius: 12px;
+    padding: 20px;
+    align-items: center;
+    height: auto; /* Allow height to be determined by the content */
+    min-height: 200px; /* Optional: Set a minimum height */
+    flex-wrap: wrap; /* Wrap content to ensure it fits inside the card */
+  }
+  
+  .trade-left,
+  .trade-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    width: 50%; /* Ensure both containers have a flexible width to fit inside the card */
+    box-sizing: border-box; /* Ensure padding doesn't cause overflow */
+  }
+  
+  .trade-game-img {
+    width: 120px; /* Adjust to make the image smaller to fit */
+    height: 120px;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+.trade-game-details {
+    text-align: center;
+}
+
+  .trade-game-details h4,
+  .trade-right, .trade-left h5 {
+    margin: 0;
+    color: #33cc33;
+    text-align: center;
+  }
+
+.trade-left h5 {
+    color: #33cc33;
+}
+  
+  .trade-right, .trade-left p {
+    color: #ffffff;
+    text-align: center;
+  }
+  

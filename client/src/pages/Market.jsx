@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import Buy from '../components/Buy/Buy'; 
-import Sell from '../components/Sell/Sell'; 
-import Trade from '../components/Trade/Trade'; 
+import Buy from '../components/Buy/Buy.jsx'; 
+import Sell from '../components/Sell/Sell.jsx'; 
+import Trade from '../components/Trade/Trade.jsx'; 
 import './Market.css';
 
 const Market = () => {
